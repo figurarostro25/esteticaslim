@@ -99,7 +99,7 @@
     }
     .btn.ghost{background:rgba(255,255,255,.70)}
 
-    /* Hero full width slider */
+    /* Hero full width slider (ahora 1 solo slide) */
     .hero-wrap{width:100%;background: var(--bg2);border-bottom:1px solid var(--line)}
     .slider{
       position:relative;overflow:hidden;
@@ -107,7 +107,7 @@
       background:#111827;
     }
     .slides{
-      display:flex;width:300%;
+      display:flex;width:100%;
       transform:translateX(0%);
       transition: transform .6s ease;
     }
@@ -170,32 +170,6 @@
     .strip b{display:block;font-size:1rem}
     .strip span{display:block;font-size:.9rem;opacity:.92}
 
-    .slider-controls{
-      position:absolute;left:0;right:0;bottom:18px;
-      display:flex;align-items:center;justify-content:center;gap:14px;
-      z-index:5;
-    }
-    .arrow{
-      width:46px;height:46px;border-radius:14px;
-      border:1px solid rgba(255,255,255,.22);
-      background: rgba(255,255,255,.14);
-      backdrop-filter: blur(10px);
-      display:grid;place-items:center;
-      cursor:pointer;
-      transition:.18s transform,.18s background;
-      user-select:none;
-    }
-    .arrow:hover{transform:translateY(-1px);background:rgba(255,255,255,.20)}
-    .dots{display:flex;gap:8px;align-items:center}
-    .dot{
-      width:10px;height:10px;border-radius:999px;
-      border:1px solid rgba(255,255,255,.55);
-      background: rgba(255,255,255,.18);
-      cursor:pointer;
-      transition:.18s transform,.18s background;
-    }
-    .dot.active{background: rgba(255,255,255,.92);transform: scale(1.05)}
-
     /* Sections */
     section{padding:54px 0}
     .section-head{text-align:center;margin-bottom:18px}
@@ -210,6 +184,49 @@
       color:var(--muted);
       line-height:1.6;
     }
+
+    /* About */
+    .about-wrap{
+      background:#fff;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+    .about-grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:16px;
+      align-items:stretch;
+      margin-top:18px;
+    }
+    .about-media{
+      border:1px solid var(--line);
+      border-radius: var(--radius2);
+      box-shadow: var(--shadow2);
+      overflow:hidden;
+      background:#eef1f8;
+      min-height: 360px;
+      position:relative;
+    }
+    .about-media img{width:100%;height:100%;object-fit:cover;display:block}
+    .about-media .ph{
+      position:absolute;inset:0;
+      display:grid;place-items:center;
+      text-align:center;
+      padding:18px;
+      color: rgba(31,41,55,.55);
+      font-weight:900;
+    }
+    .about-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius: var(--radius2);
+      box-shadow: var(--shadow2);
+      padding:18px;
+    }
+    .about-card h3{margin:0 0 10px;font-size:1.2rem}
+    .about-card p{margin:0;color:var(--muted);line-height:1.7}
+    .about-bullets{margin:12px 0 0;padding-left:18px;color:var(--muted);line-height:1.8}
+    .about-cta{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap}
 
     /* Category blocks */
     .category{
@@ -281,6 +298,33 @@
     .panel p{margin:0;color:var(--muted);line-height:1.65}
     .list{margin:12px 0 0;padding-left: 18px;color: var(--muted);line-height: 1.7}
 
+    /* Blog card with image */
+    .blog-card{
+      display:grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap:14px;
+      align-items:stretch;
+      margin-top:18px;
+    }
+    .blog-media{
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow2);
+      overflow:hidden;
+      background:#eef1f8;
+      min-height: 230px;
+      position:relative;
+    }
+    .blog-media img{width:100%;height:100%;object-fit:cover;display:block}
+    .blog-media .ph{
+      position:absolute;inset:0;
+      display:grid;place-items:center;
+      text-align:center;
+      padding:14px;
+      color: rgba(31,41,55,.55);
+      font-weight:900;
+    }
+
     /* Contact form */
     .form-grid{display:grid;grid-template-columns: repeat(12, 1fr);gap: 12px;margin-top: 12px}
     label{display:block;font-weight:900;margin-bottom:7px;font-size:.92rem}
@@ -334,6 +378,8 @@
       .wide .inner{grid-template-columns: 1fr}
       .slider,.slide{min-height: 500px}
       .hero-content{padding: 62px 18px 78px}
+      .about-grid{grid-template-columns: 1fr}
+      .blog-card{grid-template-columns: 1fr}
     }
     @media (max-width: 640px){
       .svc-card{grid-column: span 12}
@@ -360,6 +406,7 @@
 
       <nav>
         <a href="#inicio">Inicio</a>
+        <a href="#sobre">Sobre</a>
         <a href="#servicios">Tratamientos</a>
         <a href="#blog">Blog</a>
         <a href="#contacto">Contáctanos</a>
@@ -393,6 +440,7 @@
   <div class="slider">
     <div class="slides" id="slides">
 
+      <!-- SOLO 1 SLIDE (se removió el 2 y 3, sin cambiar el resto) -->
       <div class="slide">
         <img class="bgimg" src="slide-1.jpg" alt="Slide 1" onerror="this.remove()">
         <div class="overlay"></div>
@@ -413,53 +461,62 @@
         </div>
       </div>
 
-      <div class="slide">
-        <img class="bgimg" src="slide-2.jpg" alt="Slide 2" onerror="this.remove()">
-        <div class="overlay"></div>
-        <div class="hero-content">
-          <div class="kicker">Corporales • Moldeo y Bienestar</div>
-          <h1>Moldeamiento corporal y reducción por zonas</h1>
-          <p>Reducción de talla, moldeamiento, levantamiento de glúteos, drenaje linfático y masajes.</p>
-          <div class="hero-cta">
-            <button class="btn primary" onclick="openWA('Hola! Me interesa reducción de talla / moldeamiento corporal. ¿Qué plan me recomiendan?')">Consultar</button>
-            <a class="btn ghost" href="#servicios">Ver servicios</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="slide">
-        <img class="bgimg" src="slide-3.jpg" alt="Slide 3" onerror="this.remove()">
-        <div class="overlay"></div>
-        <div class="hero-content">
-          <div class="kicker">Medicina Estética • Aparatología</div>
-          <h1>Opciones avanzadas con valoración personalizada</h1>
-          <p>Botox, ácido hialurónico, bioestimuladores, PRP, skinbooster, hilos, HIFU, radiofrecuencia y láser.</p>
-          <div class="hero-cta">
-            <button class="btn primary" onclick="openWA('Hola! Me interesa medicina estética / aparatología. ¿Me orientan según mi caso?')">Hablar por WhatsApp</button>
-            <a class="btn ghost" href="#contacto">Formulario</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="slider-controls">
-      <div class="arrow" id="prevBtn" aria-label="Anterior" title="Anterior">
-        <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-
-      <div class="dots">
-        <div class="dot active" data-dot="0"></div>
-        <div class="dot" data-dot="1"></div>
-        <div class="dot" data-dot="2"></div>
-      </div>
-
-      <div class="arrow" id="nextBtn" aria-label="Siguiente" title="Siguiente">
-        <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
     </div>
   </div>
 </div>
+
+<!-- SOBRE ESTÉTICA SLIM -->
+<section class="about-wrap" id="sobre">
+  <div class="container">
+    <div class="section-head">
+      <h2>Sobre Estética Slim</h2>
+      <p>Más que estética: un espacio pensado para tu bienestar, tu confianza y resultados que se notan.</p>
+    </div>
+
+    <div class="about-grid">
+      <!-- IZQUIERDA: Imagen (placeholder) -->
+      <div class="about-media">
+        <!-- Cambia este src por tu imagen cuando la subas -->
+        <img src="about-esteticista.jpg" alt="Esteticista en Estética Slim"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+        <div class="ph" style="display:none">
+          Imagen aquí<br>
+          <small>Sube: about-esteticista.jpg</small><br><br>
+          (Esteticista / cabina / procedimiento)
+        </div>
+      </div>
+
+      <!-- DERECHA: Historia -->
+      <div class="about-card">
+        <h3>Una historia de confianza, resultados y cuidado real</h3>
+        <p>
+          En <b>Estética Slim</b> llevamos más de <b>18 años de experiencia</b> acompañando a mujeres y hombres en su camino
+          hacia una piel más saludable, un cuerpo más armonioso y una autoestima más alta.
+          <br><br>
+          Nuestra historia nace de una idea simple: <b>hacer las cosas bien</b>. Escuchar a cada cliente, evaluar su caso y
+          recomendar el tratamiento adecuado, sin promesas vacías. Con el tiempo, fuimos integrando protocolos faciales,
+          corporales, aparatología y medicina estética, siempre con un enfoque profesional y humano.
+          <br><br>
+          Hoy, ofrecemos desde <b>hidrafaciales, peeling, control de acné y manchas</b>, hasta <b>moldeamiento corporal,
+          drenaje linfático, masajes</b> y <b>opciones avanzadas</b> como armonización, bioestimulación y aparatología,
+          guiándote paso a paso para que elijas lo correcto para ti.
+        </p>
+
+        <ul class="about-bullets">
+          <li><b>Evaluación personalizada</b> y orientación honesta.</li>
+          <li><b>Protocolos combinados</b> (faciales + corporales) según objetivo.</li>
+          <li><b>Ambiente privado</b>, cuidado y atención cálida.</li>
+          <li><b>Enfoque en resultados reales</b> y seguimiento.</li>
+        </ul>
+
+        <div class="about-cta">
+          <button class="btn primary" onclick="openWA('Hola! Quiero una recomendación personalizada. ¿Me orientan según mi objetivo?')">Quiero recomendación</button>
+          <a class="btn" href="#servicios">Ver lo que ofrecemos</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- SERVICIOS COMPLETOS SEGMENTADOS -->
 <section id="servicios">
@@ -476,7 +533,6 @@
         <div class="hint">Faciales • Manchas • Acné • Regenerativos</div>
       </div>
       <div class="cards">
-        <!-- helpers: name, desc, img -->
         <div class="svc-card">
           <div class="svc-media">
             <img src="svc-facial-sencillo.jpg" alt="Facial sencillo" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
@@ -1086,7 +1142,7 @@
   </div>
 </section>
 
-<!-- BLOG (ancho) -->
+<!-- BLOG (ancho) + NUEVO BLOG ARMONIZACIÓN FACIAL -->
 <section class="wide" id="blog">
   <div class="container">
     <div class="section-head">
@@ -1124,6 +1180,41 @@
         </div>
       </div>
     </div>
+
+    <!-- NUEVO BLOG: ARMONIZACIÓN FACIAL (con imagen) -->
+    <div class="blog-card">
+      <div class="blog-media">
+        <!-- Cambia este src por tu imagen cuando la subas -->
+        <img src="blog-armonizacion.jpg" alt="Armonización facial"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+        <div class="ph" style="display:none">
+          Imagen aquí<br>
+          <small>Sube: blog-armonizacion.jpg</small><br><br>
+          (rostro / armonización / estética)
+        </div>
+      </div>
+
+      <div class="panel">
+        <h3>Armonización facial: equilibrio, proporción y un resultado natural</h3>
+        <p>
+          La <b>armonización facial</b> es un enfoque estético que busca mejorar la apariencia del rostro respetando tus rasgos,
+          trabajando <b>proporción, simetría y equilibrio</b>. No se trata de “cambiarte la cara”, sino de potenciar lo mejor de ti
+          con un plan personalizado (según valoración).
+          <br><br>
+          Dependiendo del caso, se pueden considerar técnicas como hidratación profunda, bioestimulación, soporte de volumen en puntos estratégicos
+          y manejo de líneas de expresión. Lo ideal es una evaluación para definir qué se adapta a tu objetivo: verte más descansada, rejuvenecer,
+          mejorar contorno o realzar ciertos rasgos.
+          <br><br>
+          En Estética Slim te guiamos paso a paso con un plan claro, cuidados recomendados y seguimiento para que te sientas segura desde el inicio.
+        </p>
+
+        <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+          <button class="btn primary" onclick="serviceWA('Armonización facial (por el blog)')">Quiero evaluación</button>
+          <button class="btn" onclick="openWA('Hola! Vi el blog de Armonización facial. Quiero orientación según mi objetivo y agendar.')">Consultar por WhatsApp</button>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -1243,6 +1334,7 @@
       </div>
       <div class="footlinks">
         <a href="#inicio">Inicio</a>
+        <a href="#sobre">Sobre</a>
         <a href="#servicios">Tratamientos</a>
         <a href="#blog">Blog</a>
         <a href="#contacto">Contáctanos</a>
@@ -1304,50 +1396,8 @@ Dirección: Calle Reina del Pasífico, casa 36, Pacífico.`;
     openWA(text);
   });
 
-  // Slider
-  const slidesEl = document.getElementById("slides");
-  const dots = Array.from(document.querySelectorAll(".dot"));
-  const prevBtn = document.getElementById("prevBtn");
-  const nextBtn = document.getElementById("nextBtn");
-  let index = 0;
-  let timer = null;
-
-  function goTo(i){
-    index = (i + 3) % 3;
-    slidesEl.style.transform = `translateX(-${index * 100}%)`;
-    dots.forEach((d, idx) => d.classList.toggle("active", idx === index));
-  }
-  function next(){ goTo(index + 1); }
-  function prev(){ goTo(index - 1); }
-
-  function startAuto(){
-    stopAuto();
-    timer = setInterval(next, 6000);
-  }
-  function stopAuto(){
-    if(timer) clearInterval(timer);
-    timer = null;
-  }
-
-  nextBtn.addEventListener("click", () => { next(); startAuto(); });
-  prevBtn.addEventListener("click", () => { prev(); startAuto(); });
-  dots.forEach(d => d.addEventListener("click", () => { goTo(Number(d.dataset.dot)); startAuto(); }));
-
-  // Swipe
-  const slider = document.querySelector(".slider");
-  let startX = 0;
-  slider.addEventListener("touchstart", (e) => startX = e.changedTouches[0].clientX, {passive:true});
-  slider.addEventListener("touchend", (e) => {
-    const endX = e.changedTouches[0].clientX;
-    const diff = endX - startX;
-    if(Math.abs(diff) > 45){
-      if(diff < 0) next(); else prev();
-      startAuto();
-    }
-  }, {passive:true});
-
-  goTo(0);
-  startAuto();
+  // Slider (1 solo slide, sin botones ni auto)
+  // Se deja intencionalmente sin lógica de múltiples slides.
 </script>
 
 </body>
