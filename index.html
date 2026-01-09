@@ -6,28 +6,19 @@
   <title>Estética Slim | Estética Integral</title>
   <meta name="description" content="Estética Slim: faciales, corporales, medicina estética y aparatología. Reserva por WhatsApp." />
 
-  <!-- Tipografías elegantes -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=Playfair+Display:wght@600;800;900&family=Great+Vibes&display=swap" rel="stylesheet">
-
   <style>
     :root{
-      /* Dark premium */
-      --bg:#0b0f14;
-      --bg2:#0f1622;
-      --card:#121a29;
-      --card2:#101827;
+      --bg:#ffffff;
+      --bg2:#f6f7fb;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --line: rgba(17,24,39,.12);
 
-      --text:#f3f4f6;
-      --muted:#9ca3af;
-      --line: rgba(255,255,255,.09);
-
-      --brand:#8b7cff;
+      --brand:#6d5efc;
       --brand2:#22c55e;
 
-      --shadow: 0 18px 60px rgba(0,0,0,.55);
-      --shadow2: 0 12px 30px rgba(0,0,0,.45);
+      --shadow: 0 18px 60px rgba(17,24,39,.10);
+      --shadow2: 0 12px 30px rgba(17,24,39,.10);
 
       --radius: 18px;
       --radius2: 26px;
@@ -38,7 +29,7 @@
     *{box-sizing:border-box}
     html,body{margin:0;padding:0}
     body{
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       background: var(--bg);
       color: var(--text);
     }
@@ -48,8 +39,8 @@
     /* Header */
     header{
       position:sticky;top:0;z-index:50;
-      background: rgba(11,15,20,.78);
-      backdrop-filter: blur(12px);
+      background: rgba(255,255,255,.86);
+      backdrop-filter: blur(10px);
       border-bottom:1px solid var(--line);
     }
     .topbar{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0}
@@ -57,8 +48,8 @@
     .brand img{
       width:46px;height:46px;border-radius:14px;object-fit:cover;
       border:1px solid var(--line);
-      background:#000;
-      box-shadow: 0 10px 25px rgba(0,0,0,.35);
+      background:#fff;
+      box-shadow: 0 10px 25px rgba(17,24,39,.08);
     }
     .brand .title{display:flex;flex-direction:column;line-height:1.05}
     .brand .title strong{font-size:1.05rem;letter-spacing:.2px}
@@ -69,52 +60,57 @@
       color:var(--muted);font-weight:900;font-size:.95rem;
       padding:10px 12px;border-radius:12px;border:1px solid transparent;
     }
-    nav a:hover{color:var(--text);border-color:var(--line);background:rgba(255,255,255,.05)}
+    nav a:hover{color:var(--text);border-color:var(--line);background:rgba(17,24,39,.03)}
 
     .actions{display:flex;gap:10px;align-items:center;justify-content:flex-end;min-width:240px}
     .socials{display:flex;gap:10px;align-items:center}
     .iconbtn{
       width:40px;height:40px;border-radius:14px;
       border:1px solid var(--line);
-      background:rgba(255,255,255,.04);
+      background:#fff;
       display:grid;place-items:center;
       transition:.18s transform,.18s background,.18s border;
     }
-    .iconbtn:hover{transform:translateY(-1px);background:rgba(255,255,255,.07)}
+    .iconbtn:hover{transform:translateY(-1px);background:rgba(17,24,39,.03)}
     .icon{width:18px;height:18px}
 
     .btn{
       display:inline-flex;align-items:center;justify-content:center;gap:10px;
       padding:12px 16px;border-radius:14px;
       border:1px solid var(--line);
-      background:rgba(255,255,255,.04);
+      background:#fff;
       color:var(--text);
       font-weight:900;
       cursor:pointer;user-select:none;white-space:nowrap;
       transition:.18s transform,.18s background,.18s border;
     }
-    .btn:hover{transform:translateY(-1px);background:rgba(255,255,255,.07)}
+    .btn:hover{transform:translateY(-1px);background:rgba(17,24,39,.03)}
     .btn.primary{
-      background:linear-gradient(135deg, rgba(139,124,255,1), rgba(109,94,252,.95));
-      border-color:rgba(139,124,255,.25);
+      background:linear-gradient(135deg, rgba(109,94,252,1), rgba(109,94,252,.85));
+      border-color:rgba(109,94,252,.35);
       color:#fff;
-      box-shadow: 0 14px 35px rgba(139,124,255,.22);
+      box-shadow: 0 14px 35px rgba(109,94,252,.22);
     }
     .btn.whatsapp{
-      background:linear-gradient(135deg, rgba(34,197,94,1), rgba(34,197,94,.88));
-      border-color:rgba(34,197,94,.25);
-      color:#07100a;
-      box-shadow: 0 14px 35px rgba(34,197,94,.14);
+      background:linear-gradient(135deg, rgba(34,197,94,1), rgba(34,197,94,.85));
+      border-color:rgba(34,197,94,.35);
+      color:#fff;
+      box-shadow: 0 14px 35px rgba(34,197,94,.18);
     }
+    .btn.ghost{background:rgba(255,255,255,.70)}
 
-    /* HERO */
+    /* Hero */
     .hero-wrap{width:100%;background: var(--bg2);border-bottom:1px solid var(--line)}
     .slider{
       position:relative;overflow:hidden;
       min-height: 520px;
-      background:#05070b;
+      background:#111827;
     }
-    .slides{display:flex;width:100%}
+    .slides{
+      display:flex;width:100%;
+      transform:translateX(0%);
+      transition: transform .6s ease;
+    }
     .slide{
       width:100%;
       position:relative;
@@ -125,48 +121,55 @@
     .slide .bgimg{
       position:absolute;inset:0;width:100%;height:100%;
       object-fit:cover;
-      filter:brightness(.72) contrast(1.07);
+      filter: saturate(1.05);
     }
     .overlay{
       position:absolute;inset:0;
       background:
-        radial-gradient(circle at 50% 50%, rgba(0,0,0,.15), rgba(0,0,0,.78)),
-        linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.65));
+        radial-gradient(1000px 500px at 50% 45%, rgba(0,0,0,.15), rgba(0,0,0,.55)),
+        linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.55));
     }
     .hero-content{
       position:relative;
       width:100%;
       max-width: var(--max);
-      padding: 78px 18px 84px;
+      padding: 86px 18px 98px;
       margin:0 auto;
       text-align:center;
       color:#fff;
     }
     .kicker{
-      font-weight:900;letter-spacing:.34em;text-transform:uppercase;
-      font-size:.85rem;opacity:.92;
+      font-weight:900;letter-spacing:.5px;text-transform:uppercase;
+      font-size:.92rem;opacity:.95;
     }
     .hero-content h1{
-      margin:14px auto 10px;
-      font-family:"Playfair Display",serif;
-      font-size: clamp(3.1rem, 6vw, 5rem); /* MÁS GRANDE */
+      margin:12px auto 10px;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-weight: 800;
+      font-size: clamp(2.3rem, 4.2vw, 4.1rem);
       letter-spacing:-1px;
       line-height:1.02;
       max-width: 22ch;
-      text-shadow: 0 18px 50px rgba(0,0,0,.35);
+      text-shadow: 0 14px 34px rgba(0,0,0,.30);
     }
-    .hero-content p{
+    .hero-content .tagline{
       margin:0 auto;
-      font-family:"Great Vibes",cursive;
-      font-size: clamp(1.7rem, 3.2vw, 2.6rem); /* MÁS GRANDE */
-      line-height:1.2;
-      max-width: 60ch;
-      opacity:.95;
-      text-shadow: 0 14px 40px rgba(0,0,0,.35);
+      font-family: "Brush Script MT", "Segoe Script", "Apple Chancery", cursive;
+      font-size: clamp(1.2rem, 2.0vw, 1.75rem);
+      font-weight: 500;
+      opacity:.97;
+      text-shadow: 0 10px 26px rgba(0,0,0,.28);
+    }
+    .hero-divider{
+      margin: 16px auto 0;
+      width: min(520px, 82%);
+      height: 1px;
+      background: rgba(255,255,255,.28);
+      border-radius: 999px;
     }
 
     /* Sections */
-    section{padding:58px 0}
+    section{padding:54px 0}
     .section-head{text-align:center;margin-bottom:18px}
     .section-head h2{
       margin:0;
@@ -175,14 +178,14 @@
     }
     .section-head p{
       margin:10px auto 0;
-      max-width: 92ch;
+      max-width: 90ch;
       color:var(--muted);
-      line-height:1.7;
+      line-height:1.6;
     }
 
     /* About */
     .about-wrap{
-      background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
+      background:#fff;
       border-top:1px solid var(--line);
       border-bottom:1px solid var(--line);
     }
@@ -198,34 +201,35 @@
       border-radius: var(--radius2);
       box-shadow: var(--shadow2);
       overflow:hidden;
-      background:#0b1220;
+      background:#eef1f8;
       min-height: 360px;
       position:relative;
     }
-    .about-media img{width:100%;height:100%;object-fit:cover;display:block;filter:contrast(1.03) brightness(.95)}
+    .about-media img{width:100%;height:100%;object-fit:cover;display:block}
     .about-media .ph{
       position:absolute;inset:0;
       display:grid;place-items:center;
       text-align:center;
       padding:18px;
-      color: rgba(255,255,255,.55);
+      color: rgba(31,41,55,.55);
       font-weight:900;
     }
     .about-card{
-      background: rgba(255,255,255,.03);
+      background:#fff;
       border:1px solid var(--line);
       border-radius: var(--radius2);
       box-shadow: var(--shadow2);
       padding:18px;
     }
     .about-card h3{margin:0 0 10px;font-size:1.2rem}
-    .about-card p{margin:0;color:var(--muted);line-height:1.8}
-    .about-bullets{margin:12px 0 0;padding-left:18px;color:var(--muted);line-height:1.9}
+    .about-card p{margin:0;color:var(--muted);line-height:1.7}
+    .about-bullets{margin:12px 0 0;padding-left:18px;color:var(--muted);line-height:1.8}
+    .about-cta{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap}
 
     /* Category blocks */
     .category{
       margin-top: 18px;
-      background: rgba(255,255,255,.03);
+      background: #fff;
       border:1px solid var(--line);
       border-radius: var(--radius2);
       box-shadow: var(--shadow2);
@@ -233,7 +237,7 @@
     }
     .cat-head{
       padding: 18px 18px;
-      background: linear-gradient(180deg, rgba(139,124,255,.12), rgba(255,255,255,0));
+      background: linear-gradient(180deg, rgba(109,94,252,.08), rgba(255,255,255,0));
       border-bottom: 1px solid var(--line);
       display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
     }
@@ -249,7 +253,7 @@
     }
     .svc-card{
       grid-column: span 4;
-      background: rgba(255,255,255,.03);
+      background:#fff;
       border:1px solid var(--line);
       border-radius: var(--radius);
       box-shadow: var(--shadow2);
@@ -258,44 +262,39 @@
       min-height: 240px;
     }
     .svc-media{
-      height: 160px;
-      background: #0b1220;
+      height: 150px;
+      background: #eef1f8;
       position:relative;
     }
-    .svc-media img{width:100%;height:100%;object-fit:cover;display:block;filter:contrast(1.03) brightness(.95)}
+    .svc-media img{width:100%;height:100%;object-fit:cover;display:block}
     .svc-media .ph{
       position:absolute;inset:0;
       display:grid;place-items:center;
-      color: rgba(255,255,255,.55);
+      color: rgba(31,41,55,.55);
       font-weight:900;
       text-align:center;
       padding: 12px;
     }
     .svc-body{padding:14px 14px 16px}
-    .svc-body b{display:block;font-size:1.02rem;margin-bottom:6px}
-    .svc-body p{margin:0;color:var(--muted);line-height:1.55;font-size:.95rem}
+    .svc-body b{display:block;font-size:1.03rem;margin-bottom:6px}
+    .svc-body p{margin:0;color:var(--muted);line-height:1.55}
     .svc-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
 
     /* Wide blog block */
-    .wide{
-      background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
-      border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line)
-    }
+    .wide{background: var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
     .wide .inner{
       display:grid;grid-template-columns: 1.1fr .9fr;gap: 16px;align-items: stretch;
       margin-top: 18px;
     }
     .panel{
-      background: rgba(255,255,255,.03);
-      border:1px solid var(--line);
+      background:#fff;border:1px solid var(--line);
       border-radius: var(--radius);
       box-shadow: var(--shadow2);
       padding:18px;
     }
     .panel h3{margin:0 0 10px;font-size:1.15rem}
-    .panel p{margin:0;color:var(--muted);line-height:1.75}
-    .list{margin:12px 0 0;padding-left: 18px;color: var(--muted);line-height: 1.85}
+    .panel p{margin:0;color:var(--muted);line-height:1.65}
+    .list{margin:12px 0 0;padding-left: 18px;color: var(--muted);line-height: 1.7}
 
     /* Blog card with image */
     .blog-card{
@@ -310,17 +309,17 @@
       border-radius: var(--radius);
       box-shadow: var(--shadow2);
       overflow:hidden;
-      background:#0b1220;
+      background:#eef1f8;
       min-height: 230px;
       position:relative;
     }
-    .blog-media img{width:100%;height:100%;object-fit:cover;display:block;filter:contrast(1.03) brightness(.95)}
+    .blog-media img{width:100%;height:100%;object-fit:cover;display:block}
     .blog-media .ph{
       position:absolute;inset:0;
       display:grid;place-items:center;
       text-align:center;
       padding:14px;
-      color: rgba(255,255,255,.55);
+      color: rgba(31,41,55,.55);
       font-weight:900;
     }
 
@@ -331,39 +330,37 @@
       width:100%;
       padding:12px;border-radius: 14px;
       border:1px solid var(--line);
-      background: rgba(255,255,255,.03);
-      color: var(--text);
+      background: #fff;
       outline:none;font-size: 1rem;
     }
-    select option, optgroup{background:#0b0f14;color:#fff}
     textarea{min-height:120px;resize:vertical}
     .field{grid-column: span 6}
     .field.full{grid-column: span 12}
-    .help{margin-top:10px;color:var(--muted);font-size:.92rem;line-height:1.55}
+    .help{margin-top:10px;color:var(--muted);font-size:.92rem;line-height:1.45}
 
     /* Footer */
-    footer{padding:34px 0;background:#070a0f;border-top:1px solid var(--line)}
+    footer{padding:34px 0;background:#fff;border-top:1px solid var(--line)}
     .foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color: var(--muted);font-size:.95rem}
     .foot b{color:var(--text)}
     .footlinks{display:flex;gap:10px;flex-wrap:wrap}
     .footlinks a{padding:8px 10px;border-radius:12px;border:1px solid transparent}
-    .footlinks a:hover{border-color:var(--line);background:rgba(255,255,255,.05);color:var(--text)}
+    .footlinks a:hover{border-color:var(--line);background:rgba(17,24,39,.03);color:var(--text)}
 
-    /* WhatsApp float */
+    /* WhatsApp float (derecha centro) */
     .wa-float{
       position:fixed;right:18px;top:50%;
       transform:translateY(-50%);
       z-index:1000;
       display:flex;align-items:center;gap:10px;
       padding:10px 12px;border-radius:999px;
-      border:1px solid rgba(34,197,94,.30);
-      background: rgba(255,255,255,.06);
-      box-shadow: 0 18px 50px rgba(0,0,0,.55);
+      border:1px solid rgba(34,197,94,.35);
+      background:#fff;
+      box-shadow: 0 18px 50px rgba(17,24,39,.18);
     }
     .wa-badge{
       width:44px;height:44px;border-radius:999px;
       background:rgba(34,197,94,.12);
-      border:1px solid rgba(34,197,94,.30);
+      border:1px solid rgba(34,197,94,.35);
       display:grid;place-items:center;
     }
     .wa-icon{width:22px;height:22px}
@@ -378,7 +375,7 @@
       .svc-card{grid-column: span 6}
       .wide .inner{grid-template-columns: 1fr}
       .slider,.slide{min-height: 500px}
-      .hero-content{padding: 66px 18px 78px}
+      .hero-content{padding: 70px 18px 90px}
       .about-grid{grid-template-columns: 1fr}
       .blog-card{grid-template-columns: 1fr}
     }
@@ -435,74 +432,84 @@
   </div>
 </header>
 
-<!-- HERO (SIN BOTONES) -->
+<!-- HERO -->
 <div class="hero-wrap" id="inicio">
   <div class="slider">
-    <div class="slides">
-
+    <div class="slides" id="slides">
       <div class="slide">
-        <img class="bgimg" src="slide-1.jpg" alt="Banner principal" onerror="this.remove()">
+        <img class="bgimg" src="slide-1.jpg" alt="Estética Slim" onerror="this.remove()">
         <div class="overlay"></div>
+
+        <!-- Banner limpio: SIN botones dentro del slide -->
         <div class="hero-content">
-          <div class="kicker">Centro de Estética • Bienestar y Belleza</div>
+          <div class="kicker">Centro de estética • Bienestar y belleza</div>
           <h1>ESTÉTICA SLIM</h1>
-          <p>La salud de tu cuerpo y tu piel está en nuestras manos</p>
+          <div class="tagline">La salud de tu cuerpo y tu piel está en nuestras manos</div>
+          <div class="hero-divider"></div>
         </div>
       </div>
-
     </div>
   </div>
 </div>
 
-<!-- SOBRE ESTÉTICA SLIM (TU TEXTO) -->
+<!-- SOBRE ESTÉTICA SLIM -->
 <section class="about-wrap" id="sobre">
   <div class="container">
     <div class="section-head">
       <h2>Sobre Estética Slim</h2>
-      <p>Somos un espacio ideado para tu bienestar, donde lograrás obtener confianza y seguridad en tus resultados.</p>
+      <p>Un espacio ideado para tu bienestar, donde lograrás obtener confianza y seguridad en tus resultados.</p>
     </div>
 
     <div class="about-grid">
+      <!-- IZQUIERDA: Imagen (placeholder) -->
       <div class="about-media">
-        <img src="about-esteticista.jpg" alt="Esteticista"
+        <img src="about-esteticista.jpg" alt="Esteticista en Estética Slim"
              onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
         <div class="ph" style="display:none">
           Imagen aquí<br>
-          <small>Sube: about-esteticista.jpg</small>
+          <small>Sube: about-esteticista.jpg</small><br><br>
+          (Esteticista / cabina / procedimiento)
         </div>
       </div>
 
+      <!-- DERECHA: Historia -->
       <div class="about-card">
         <h3>Historia</h3>
         <p>
-          Somos una empresa constituida desde <b>2015</b>, logrando en <b>10 años</b> de experiencia acompañar a nuestros pacientes en todos sus procesos
-          para lograr definir entre la estética y lo emocional un conjunto, brindando armonía y seguridad en sus tratamientos. Como resultado, la gran satisfacción
-          en cada paciente.
+          Somos una empresa constituida desde <b>2015</b>, logrando en <b>10 años</b> de experiencia acompañar a nuestros pacientes
+          en todos sus procesos para definir, entre la estética y lo emocional, un conjunto que brinde armonía y seguridad en sus tratamientos.
+          Como resultado, alcanzamos una gran satisfacción en cada paciente.
           <br><br>
-          Nuestra historia comienza en el cuidado del paciente, escuchándolo en cada una de sus necesidades, evaluando cada caso, tanto en lo físico como en salud,
-          para poder ofrecer un protocolo <b>100% personalizado y eficaz</b>.
+          Nuestra historia comienza en el <b>cuidado del paciente</b>: escuchándolo en cada una de sus necesidades, evaluando cada caso,
+          tanto en lo físico como en salud, para poder ofrecer un protocolo <b>100% personalizado y eficaz</b>.
           <br><br>
-          Con el tiempo fuimos creciendo e integrando nuevos protocolos que van a la vanguardia profesional y humana.
-          Hoy te ofrecemos más que tratamientos: <b>la mejor experiencia</b>, donde paso a paso elegimos bajo tus parámetros lo que es mejor para ti, con productos
-          de calidad asegurándonos de tu bienestar y confianza.
+          Con el tiempo, fuimos creciendo e integrando nuevos protocolos que van a la vanguardia profesional y humana.
+          <br><br>
+          Hoy te ofrecemos más que tratamientos: <b>la mejor experiencia</b>, donde paso a paso elegimos, bajo tus parámetros, lo que es mejor para ti,
+          con productos de calidad, asegurándonos de tu bienestar y confianza.
         </p>
 
         <ul class="about-bullets">
           <li><b>Evaluación personalizada</b> con orientación de acuerdo a tus necesidades.</li>
           <li><b>Protocolos combinados</b> de acuerdo a tu piel.</li>
-          <li><b>Ambiente privado</b> con cuidados y atención personalizada enfocados a los resultados que tú deseas.</li>
+          <li><b>Ambiente privado</b> con cuidados y atención personalizada, enfocados a los resultados que tú deseas.</li>
         </ul>
+
+        <div class="about-cta">
+          <button class="btn primary" onclick="openWA('Hola! Quiero una recomendación personalizada. ¿Me orientan según mi objetivo?')">Quiero recomendación</button>
+          <a class="btn" href="#servicios">Ver tratamientos</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SERVICIOS COMPLETOS (con campo de descripción listo para tus textos) -->
+<!-- SERVICIOS COMPLETOS SEGMENTADOS -->
 <section id="servicios">
   <div class="container">
     <div class="section-head">
       <h2>Tratamientos y Servicios</h2>
-      <p>Servicios segmentados por categorías. Cada tarjeta tiene imagen + nombre + descripción.</p>
+      <p>Lista completa segmentada por categorías. Cada tarjeta incluye imagen, descripción y botón directo de WhatsApp.</p>
     </div>
 
     <!-- Estética Integral -->
@@ -511,149 +518,200 @@
         <h3>Estética Integral • Faciales</h3>
         <div class="hint">Faciales • Manchas • Acné • Regenerativos</div>
       </div>
-
       <div class="cards">
-        <!-- 1 -->
+
         <div class="svc-card">
           <div class="svc-media">
             <img src="svc-facial-sencillo.jpg" alt="Facial sencillo" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-            <div class="ph" style="display:none">svc-facial-sencillo.jpg</div>
+            <div class="ph" style="display:none">Imagen<br><small>svc-facial-sencillo.jpg</small></div>
           </div>
           <div class="svc-body">
             <b>Facial sencillo</b>
-            <p>Descripción aquí (me la envías y la reemplazo exacta).</p>
+            <p>Se centra en la limpieza y el mantenimiento de la piel.</p>
+            <div class="svc-actions">
+              <button class="btn whatsapp" onclick="serviceWA('Facial sencillo')">Contactar</button>
+              <button class="btn" onclick="openWA('Hola! Quiero información del Facial sencillo: precio, duración y qué incluye.')">Detalles</button>
+            </div>
           </div>
         </div>
 
         <div class="svc-card">
           <div class="svc-media">
             <img src="svc-facial-profundo.jpg" alt="Facial profundo" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-            <div class="ph" style="display:none">svc-facial-profundo.jpg</div>
+            <div class="ph" style="display:none">Imagen<br><small>svc-facial-profundo.jpg</small></div>
           </div>
           <div class="svc-body">
             <b>Facial profundo</b>
-            <p>Descripción aquí (me la envías y la reemplazo exacta).</p>
+            <p>Se centra en eliminar impurezas de la piel, incluyendo aparatología.</p>
+            <div class="svc-actions">
+              <button class="btn whatsapp" onclick="serviceWA('Facial profundo')">Contactar</button>
+              <button class="btn" onclick="openWA('Hola! Quiero información del Facial profundo: precio, duración y cuidados.')">Detalles</button>
+            </div>
           </div>
         </div>
 
         <div class="svc-card">
           <div class="svc-media">
             <img src="svc-hidrafacial.jpg" alt="Hidrafacial" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-            <div class="ph" style="display:none">svc-hidrafacial.jpg</div>
+            <div class="ph" style="display:none">Imagen<br><small>svc-hidrafacial.jpg</small></div>
           </div>
           <div class="svc-body">
             <b>Hidrafacial</b>
-            <p>Descripción aquí (me la envías y la reemplazo exacta).</p>
+            <p>Consiste en realizar una limpieza facial profunda enfocada en hidratación con 6 aparatologías.</p>
+            <div class="svc-actions">
+              <button class="btn whatsapp" onclick="serviceWA('Hidrafacial')">Contactar</button>
+              <button class="btn" onclick="openWA('Hola! Quiero saber precio y duración del Hidrafacial. ¿Qué incluye?')">Detalles</button>
+            </div>
           </div>
         </div>
 
         <div class="svc-card">
           <div class="svc-media">
             <img src="svc-acne.jpg" alt="Tratamientos para el acné" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-            <div class="ph" style="display:none">svc-acne.jpg</div>
+            <div class="ph" style="display:none">Imagen<br><small>svc-acne.jpg</small></div>
           </div>
           <div class="svc-body">
             <b>Tratamientos para el acné</b>
-            <p>Descripción aquí (me la envías y la reemplazo exacta).</p>
+            <p>Tratamientos para el acné tipo 1 y 2 con diferentes protocolos.</p>
+            <div class="svc-actions">
+              <button class="btn whatsapp" onclick="serviceWA('Tratamientos para el acné')">Contactar</button>
+              <button class="btn" onclick="openWA('Hola! Quiero controlar el acné. ¿Qué protocolo recomiendan para mi caso?')">Consultar</button>
+            </div>
           </div>
         </div>
 
         <div class="svc-card">
           <div class="svc-media">
             <img src="svc-peeling.jpg" alt="Peeling" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-            <div class="ph" style="display:none">svc-peeling.jpg</div>
+            <div class="ph" style="display:none">Imagen<br><small>svc-peeling.jpg</small></div>
           </div>
           <div class="svc-body">
             <b>Peeling</b>
-            <p>Descripción aquí (me la envías y la reemplazo exacta).</p>
+            <p>Tratamientos para diferentes necesidades de la piel: químicos y con aparatología.</p>
+            <div class="svc-actions">
+              <button class="btn whatsapp" onclick="serviceWA('Peeling')">Contactar</button>
+              <button class="btn" onclick="openWA('Hola! Me interesa peeling. ¿Cuál me recomiendan según mi piel?')">Recomendación</button>
+            </div>
           </div>
         </div>
 
         <div class="svc-card">
           <div class="svc-media">
             <img src="svc-mesoterapia-inducida.jpg" alt="Mesoterapia inducida" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-            <div class="ph" style="display:none">svc-mesoterapia-inducida.jpg</div>
+            <div class="ph" style="display:none">Imagen<br><small>svc-mesoterapia-inducida.jpg</small></div>
           </div>
           <div class="svc-body">
             <b>Mesoterapia inducida</b>
-            <p>Descripción aquí (me la envías y la reemplazo exacta).</p>
+            <p>Se basa en aplicar principios activos para mejorar la calidad de la piel.</p>
+            <div class="svc-actions">
+              <button class="btn whatsapp" onclick="serviceWA('Mesoterapia inducida')">Contactar</button>
+              <button class="btn" onclick="openWA('Hola! Quiero información de mesoterapia inducida: objetivos y sesiones.')">Detalles</button>
+            </div>
           </div>
         </div>
 
         <div class="svc-card">
           <div class="svc-media">
-            <img src="svc-exosomas-prp.jpg" alt="Exosomas / PRP" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-            <div class="ph" style="display:none">svc-exosomas-prp.jpg</div>
+            <img src="svc-exosomas-prp.jpg" alt="Exosomas" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+            <div class="ph" style="display:none">Imagen<br><small>svc-exosomas-prp.jpg</small></div>
           </div>
           <div class="svc-body">
             <b>Exosomas</b>
-            <p>Descripción aquí (me la envías y la reemplazo exacta).</p>
+            <p>Nueva tecnología para reparar y rejuvenecer las células y la piel.</p>
+            <div class="svc-actions">
+              <button class="btn whatsapp" onclick="serviceWA('Exosomas')">Contactar</button>
+              <button class="btn" onclick="openWA('Hola! Me interesan los Exosomas. ¿Cómo es la valoración y el plan?')">Consultar</button>
+            </div>
           </div>
         </div>
 
         <div class="svc-card">
           <div class="svc-media">
             <img src="svc-prp.jpg" alt="PRP" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-            <div class="ph" style="display:none">svc-prp.jpg</div>
+            <div class="ph" style="display:none">Imagen<br><small>svc-prp.jpg</small></div>
           </div>
           <div class="svc-body">
-            <b>Plasma rico en plaquetas (PRP)</b>
-            <p>Descripción aquí (me la envías y la reemplazo exacta).</p>
+            <b>PRP</b>
+            <p>Ideal para realizar una regeneración celular.</p>
+            <div class="svc-actions">
+              <button class="btn whatsapp" onclick="serviceWA('PRP')">Contactar</button>
+              <button class="btn" onclick="openWA('Hola! Me interesa PRP. ¿Qué incluye y cuántas sesiones recomiendan?')">Detalles</button>
+            </div>
           </div>
         </div>
 
         <div class="svc-card">
           <div class="svc-media">
             <img src="svc-hollywood-peeling.jpg" alt="Hollywood peeling" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-            <div class="ph" style="display:none">svc-hollywood-peeling.jpg</div>
+            <div class="ph" style="display:none">Imagen<br><small>svc-hollywood-peeling.jpg</small></div>
           </div>
           <div class="svc-body">
             <b>Hollywood peeling</b>
-            <p>Descripción aquí (me la envías y la reemplazo exacta).</p>
+            <p>Ideal para tratar manchas y eliminar flacidez.</p>
+            <div class="svc-actions">
+              <button class="btn whatsapp" onclick="serviceWA('Hollywood peeling')">Contactar</button>
+              <button class="btn" onclick="openWA('Hola! Quiero Hollywood peeling. ¿Qué cuidados se recomiendan?')">Detalles</button>
+            </div>
           </div>
         </div>
 
         <div class="svc-card">
           <div class="svc-media">
             <img src="svc-manchas.jpg" alt="Tratamientos para manchas" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-            <div class="ph" style="display:none">svc-manchas.jpg</div>
+            <div class="ph" style="display:none">Imagen<br><small>svc-manchas.jpg</small></div>
           </div>
           <div class="svc-body">
             <b>Tratamientos para manchas</b>
-            <p>Descripción aquí (me la envías y la reemplazo exacta).</p>
+            <p>Diferentes protocolos para tratar afecciones de la piel como el melasma.</p>
+            <div class="svc-actions">
+              <button class="btn whatsapp" onclick="serviceWA('Tratamientos para manchas')">Contactar</button>
+              <button class="btn" onclick="openWA('Hola! Me interesan tratamientos para manchas. ¿Qué me recomiendan según mi piel?')">Consultar</button>
+            </div>
           </div>
         </div>
 
         <div class="svc-card">
           <div class="svc-media">
-            <img src="svc-fibroblast-verrugas.jpg" alt="Fibroblast" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-            <div class="ph" style="display:none">svc-fibroblast-verrugas.jpg</div>
+            <img src="svc-fibroblast-verrugas.jpg" alt="Fiborblast (acrocordones y verrugas)" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+            <div class="ph" style="display:none">Imagen<br><small>svc-fibroblast-verrugas.jpg</small></div>
           </div>
           <div class="svc-body">
-            <b>Fibroblast (acrocordones y verrugas)</b>
-            <p>Descripción aquí (me la envías y la reemplazo exacta).</p>
+            <b>Fiborblast (acrocordones y verrugas)</b>
+            <p>Este dispositivo nos ayuda a retraer el exceso de piel, elimina arrugas y acrocordones.</p>
+            <div class="svc-actions">
+              <button class="btn whatsapp" onclick="serviceWA('Fiborblast (acrocordones y verrugas)')">Contactar</button>
+              <button class="btn" onclick="openWA('Hola! Quiero información de Fiborblast para acrocordones/verrugas. ¿Cómo es la valoración?')">Consultar</button>
+            </div>
           </div>
         </div>
 
         <div class="svc-card">
           <div class="svc-media">
-            <img src="svc-aranitas.jpg" alt="Arañitas" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-            <div class="ph" style="display:none">svc-aranitas.jpg</div>
+            <img src="svc-aranitas.jpg" alt="Eliminación de arañitas" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+            <div class="ph" style="display:none">Imagen<br><small>svc-aranitas.jpg</small></div>
           </div>
           <div class="svc-body">
             <b>Eliminación de arañitas</b>
-            <p>Descripción aquí (me la envías y la reemplazo exacta).</p>
+            <p>Diferentes protocolos para eliminación de arañitas con productos y aparatología.</p>
+            <div class="svc-actions">
+              <button class="btn whatsapp" onclick="serviceWA('Eliminación de arañitas')">Contactar</button>
+              <button class="btn" onclick="openWA('Hola! Me interesan eliminación de arañitas. ¿Cómo es la valoración?')">Consultar</button>
+            </div>
           </div>
         </div>
 
         <div class="svc-card">
           <div class="svc-media">
-            <img src="svc-sueroterapia.jpg" alt="Sueroterapia" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-            <div class="ph" style="display:none">svc-sueroterapia.jpg</div>
+            <img src="svc-sueroterapia.jpg" alt="Sueroterapia ortomolecular" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+            <div class="ph" style="display:none">Imagen<br><small>svc-sueroterapia.jpg</small></div>
           </div>
           <div class="svc-body">
             <b>Sueroterapia ortomolecular</b>
-            <p>Descripción aquí (me la envías y la reemplazo exacta).</p>
+            <p>Ideal para diferentes necesidades y patologías en el cuerpo.</p>
+            <div class="svc-actions">
+              <button class="btn whatsapp" onclick="serviceWA('Sueroterapia ortomolecular')">Contactar</button>
+              <button class="btn" onclick="openWA('Hola! Quiero información de sueroterapia ortomolecular: opciones y duración.')">Detalles</button>
+            </div>
           </div>
         </div>
 
@@ -671,88 +729,122 @@
         <div class="svc-card">
           <div class="svc-media">
             <img src="svc-hidrolipoclasia.jpg" alt="Hidrolipoclasia" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-            <div class="ph" style="display:none">svc-hidrolipoclasia.jpg</div>
+            <div class="ph" style="display:none">Imagen<br><small>svc-hidrolipoclasia.jpg</small></div>
           </div>
           <div class="svc-body">
             <b>Hidrolipoclasia</b>
-            <p>Descripción aquí (me la envías y la reemplazo exacta).</p>
+            <p>Tratamiento para reducir medidas.</p>
+            <div class="svc-actions">
+              <button class="btn whatsapp" onclick="serviceWA('Hidrolipoclasia')">Contactar</button>
+              <button class="btn" onclick="openWA('Hola! Me interesa Hidrolipoclasia. ¿Qué incluye la valoración?')">Consultar</button>
+            </div>
           </div>
         </div>
 
         <div class="svc-card">
           <div class="svc-media">
             <img src="svc-reduccion.jpg" alt="Reducción de talla" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-            <div class="ph" style="display:none">svc-reduccion.jpg</div>
+            <div class="ph" style="display:none">Imagen<br><small>svc-reduccion.jpg</small></div>
           </div>
           <div class="svc-body">
             <b>Reducción de talla</b>
-            <p>Descripción aquí (me la envías y la reemplazo exacta).</p>
+            <p>Reducción de talla con aparatología.</p>
+            <div class="svc-actions">
+              <button class="btn whatsapp" onclick="serviceWA('Reducción de talla')">Contactar</button>
+              <button class="btn" onclick="openWA('Hola! Me interesa reducción de talla. ¿Tienen paquetes por sesiones?')">Paquetes</button>
+            </div>
           </div>
         </div>
 
         <div class="svc-card">
           <div class="svc-media">
-            <img src="svc-moldeamiento.jpg" alt="Moldeamiento" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-            <div class="ph" style="display:none">svc-moldeamiento.jpg</div>
+            <img src="svc-moldeamiento.jpg" alt="Moldeamiento corporal" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+            <div class="ph" style="display:none">Imagen<br><small>svc-moldeamiento.jpg</small></div>
           </div>
           <div class="svc-body">
             <b>Moldeamiento corporal</b>
-            <p>Descripción aquí (me la envías y la reemplazo exacta).</p>
+            <p>Para la flacidez y reducción de grasa.</p>
+            <div class="svc-actions">
+              <button class="btn whatsapp" onclick="serviceWA('Moldeamiento corporal')">Contactar</button>
+              <button class="btn" onclick="openWA('Hola! Quiero información de Moldeamiento corporal: sesiones y objetivos.')">Detalles</button>
+            </div>
           </div>
         </div>
 
         <div class="svc-card">
           <div class="svc-media">
-            <img src="svc-gluteos.jpg" alt="Glúteos" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-            <div class="ph" style="display:none">svc-gluteos.jpg</div>
+            <img src="svc-gluteos.jpg" alt="Levantamiento de glúteos" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+            <div class="ph" style="display:none">Imagen<br><small>svc-gluteos.jpg</small></div>
           </div>
           <div class="svc-body">
             <b>Levantamiento de glúteos</b>
-            <p>Descripción aquí (me la envías y la reemplazo exacta).</p>
+            <p>Moldeamiento de glúteos con aparatología y bioestimuladores.</p>
+            <div class="svc-actions">
+              <button class="btn whatsapp" onclick="serviceWA('Levantamiento de glúteos')">Contactar</button>
+              <button class="btn" onclick="openWA('Hola! Me interesa levantamiento de glúteos. ¿Qué incluye el plan?')">Consultar</button>
+            </div>
           </div>
         </div>
 
         <div class="svc-card">
           <div class="svc-media">
-            <img src="svc-drenaje.jpg" alt="Drenaje" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-            <div class="ph" style="display:none">svc-drenaje.jpg</div>
+            <img src="svc-drenaje.jpg" alt="Drenaje linfático" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+            <div class="ph" style="display:none">Imagen<br><small>svc-drenaje.jpg</small></div>
           </div>
           <div class="svc-body">
             <b>Drenaje linfático</b>
-            <p>Descripción aquí (me la envías y la reemplazo exacta).</p>
+            <p>Postoperatorios e indicado para edemas.</p>
+            <div class="svc-actions">
+              <button class="btn whatsapp" onclick="serviceWA('Drenaje linfático')">Contactar</button>
+              <button class="btn" onclick="openWA('Hola! Quiero drenaje linfático. ¿Cuánto dura y para quién es ideal?')">Detalles</button>
+            </div>
           </div>
         </div>
 
         <div class="svc-card">
           <div class="svc-media">
-            <img src="svc-capacitiva.jpg" alt="Capacitiva" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-            <div class="ph" style="display:none">svc-capacitiva.jpg</div>
+            <img src="svc-capacitiva.jpg" alt="Tecarterapia, capacitativa y reductiva" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+            <div class="ph" style="display:none">Imagen<br><small>svc-capacitiva.jpg</small></div>
           </div>
           <div class="svc-body">
-            <b>Terapias capacitativas y regenerativas</b>
-            <p>Descripción aquí (me la envías y la reemplazo exacta).</p>
+            <b>Tecarterapia, capacitativa y reductiva</b>
+            <p>Tecarterapia, capacitativa y reductiva.</p>
+            <div class="svc-actions">
+              <button class="btn whatsapp" onclick="serviceWA('Tecarterapia, capacitativa y reductiva')">Contactar</button>
+              <button class="btn" onclick="openWA('Hola! Me interesa tecarterapia. ¿Para qué casos la recomiendan?')">Consultar</button>
+            </div>
           </div>
         </div>
 
+        <!-- Mantengo el servicio (aunque no tengas imagen en tu lista actual) -->
         <div class="svc-card">
           <div class="svc-media">
             <img src="svc-masajes-corporales.jpg" alt="Masajes corporales" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-            <div class="ph" style="display:none">svc-masajes-corporales.jpg</div>
+            <div class="ph" style="display:none">Imagen<br><small>svc-masajes-corporales.jpg</small></div>
           </div>
           <div class="svc-body">
             <b>Masajes corporales</b>
-            <p>Descripción aquí (me la envías y la reemplazo exacta).</p>
+            <p>Los mejores tratamientos para tu relajación y descanso.</p>
+            <div class="svc-actions">
+              <button class="btn whatsapp" onclick="serviceWA('Masajes corporales')">Contactar</button>
+              <button class="btn" onclick="openWA('Hola! Quiero masajes corporales. ¿Qué tipos manejan y precios?')">Detalles</button>
+            </div>
           </div>
         </div>
 
+        <!-- Mantengo el servicio (aunque no tengas imagen en tu lista actual) -->
         <div class="svc-card">
           <div class="svc-media">
             <img src="svc-masaje.jpg" alt="Masajes relajantes" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-            <div class="ph" style="display:none">svc-masaje.jpg</div>
+            <div class="ph" style="display:none">Imagen<br><small>svc-masaje.jpg</small></div>
           </div>
           <div class="svc-body">
             <b>Masajes relajantes</b>
-            <p>Descripción aquí (me la envías y la reemplazo exacta).</p>
+            <p>Los mejores tratamientos para tu relajación y descanso.</p>
+            <div class="svc-actions">
+              <button class="btn whatsapp" onclick="serviceWA('Masajes relajantes')">Contactar</button>
+              <button class="btn" onclick="openWA('Hola! Quiero masaje relajante. ¿Qué horarios tienen?')">Horarios</button>
+            </div>
           </div>
         </div>
 
@@ -770,99 +862,122 @@
         <div class="svc-card">
           <div class="svc-media">
             <img src="svc-botox.jpg" alt="Botox" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-            <div class="ph" style="display:none">svc-botox.jpg</div>
+            <div class="ph" style="display:none">Imagen<br><small>svc-botox.jpg</small></div>
           </div>
           <div class="svc-body">
             <b>Botox</b>
-            <p>Descripción aquí (me la envías y la reemplazo exacta).</p>
+            <p>Elimina arrugas dinámicas y estáticas.</p>
+            <div class="svc-actions">
+              <button class="btn whatsapp" onclick="serviceWA('Botox')">Contactar</button>
+              <button class="btn" onclick="openWA('Hola! Me interesa Botox. ¿Cómo es la valoración y cuidados?')">Consultar</button>
+            </div>
           </div>
         </div>
 
         <div class="svc-card">
           <div class="svc-media">
             <img src="svc-acido-hialuronico.jpg" alt="Ácido hialurónico" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-            <div class="ph" style="display:none">svc-acido-hialuronico.jpg</div>
+            <div class="ph" style="display:none">Imagen<br><small>svc-acido-hialuronico.jpg</small></div>
           </div>
           <div class="svc-body">
             <b>Ácido hialurónico</b>
-            <p>Descripción aquí (me la envías y la reemplazo exacta).</p>
+            <p>Ideal para rellenar, posicionar e hidratar a profundidad.</p>
+            <div class="svc-actions">
+              <button class="btn whatsapp" onclick="serviceWA('Ácido hialurónico')">Contactar</button>
+              <button class="btn" onclick="openWA('Hola! Me interesa ácido hialurónico. ¿Qué zonas trabajan?')">Zonas</button>
+            </div>
           </div>
         </div>
 
         <div class="svc-card">
           <div class="svc-media">
             <img src="svc-bioestimuladores.jpg" alt="Bioestimuladores" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-            <div class="ph" style="display:none">svc-bioestimuladores.jpg</div>
+            <div class="ph" style="display:none">Imagen<br><small>svc-bioestimuladores.jpg</small></div>
           </div>
           <div class="svc-body">
             <b>Bioestimuladores</b>
-            <p>Descripción aquí (me la envías y la reemplazo exacta).</p>
-          </div>
-        </div>
-
-        <div class="svc-card">
-          <div class="svc-media">
-            <img src="svc-prp.jpg" alt="PRP" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-            <div class="ph" style="display:none">svc-prp.jpg</div>
-          </div>
-          <div class="svc-body">
-            <b>PRP</b>
-            <p>Descripción aquí (me la envías y la reemplazo exacta).</p>
+            <p>Inducción de colágeno, rejuvenecimiento y eliminación de flacidez.</p>
+            <div class="svc-actions">
+              <button class="btn whatsapp" onclick="serviceWA('Bioestimuladores')">Contactar</button>
+              <button class="btn" onclick="openWA('Hola! Quiero información de bioestimuladores. ¿Cómo es la valoración?')">Consultar</button>
+            </div>
           </div>
         </div>
 
         <div class="svc-card">
           <div class="svc-media">
             <img src="svc-skinbooster.jpg" alt="Skinbooster" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-            <div class="ph" style="display:none">svc-skinbooster.jpg</div>
+            <div class="ph" style="display:none">Imagen<br><small>svc-skinbooster.jpg</small></div>
           </div>
           <div class="svc-body">
             <b>Skinbooster</b>
-            <p>Descripción aquí (me la envías y la reemplazo exacta).</p>
+            <p>Ideal para mejorar la calidad de la piel e hidratación.</p>
+            <div class="svc-actions">
+              <button class="btn whatsapp" onclick="serviceWA('Skinbooster')">Contactar</button>
+              <button class="btn" onclick="openWA('Hola! Quiero Skinbooster. ¿Qué resultados se esperan?')">Detalles</button>
+            </div>
           </div>
         </div>
 
+        <!-- Mantengo Endolifting (si no tienes imagen, saldrá placeholder) -->
         <div class="svc-card">
           <div class="svc-media">
             <img src="svc-endolifting.jpg" alt="Endolifting" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-            <div class="ph" style="display:none">svc-endolifting.jpg</div>
+            <div class="ph" style="display:none">Imagen<br><small>svc-endolifting.jpg</small></div>
           </div>
           <div class="svc-body">
             <b>Endolifting</b>
-            <p>Descripción aquí (me la envías y la reemplazo exacta).</p>
+            <p>Procedimiento avanzado (según valoración).</p>
+            <div class="svc-actions">
+              <button class="btn whatsapp" onclick="serviceWA('Endolifting')">Contactar</button>
+              <button class="btn" onclick="openWA('Hola! Me interesa Endolifting. ¿Cómo es la valoración?')">Consultar</button>
+            </div>
           </div>
         </div>
 
+        <!-- Mantengo Armonización -->
         <div class="svc-card">
           <div class="svc-media">
-            <img src="blog-armonizacion.jpg" alt="Armonización facial" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-            <div class="ph" style="display:none">blog-armonizacion.jpg</div>
+            <img src="svc-armonizacion.jpg" alt="Armonización facial" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+            <div class="ph" style="display:none">Imagen<br><small>svc-armonizacion.jpg</small></div>
           </div>
           <div class="svc-body">
             <b>Armonización facial</b>
-            <p>Descripción aquí (me la envías y la reemplazo exacta).</p>
+            <p>Plan estético según rasgos y objetivo.</p>
+            <div class="svc-actions">
+              <button class="btn whatsapp" onclick="serviceWA('Armonización facial')">Contactar</button>
+              <button class="btn" onclick="openWA('Hola! Quiero armonización facial. ¿Qué recomiendan según mi objetivo?')">Consultar</button>
+            </div>
           </div>
         </div>
 
         <div class="svc-card">
           <div class="svc-media">
             <img src="svc-hilos.jpg" alt="Hilos tensores" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-            <div class="ph" style="display:none">svc-hilos.jpg</div>
+            <div class="ph" style="display:none">Imagen<br><small>svc-hilos.jpg</small></div>
           </div>
           <div class="svc-body">
             <b>Hilos tensores</b>
-            <p>Descripción aquí (me la envías y la reemplazo exacta).</p>
+            <p>Inducción de colágeno y reposicionamiento del tejido cutáneo.</p>
+            <div class="svc-actions">
+              <button class="btn whatsapp" onclick="serviceWA('Hilos tensores')">Contactar</button>
+              <button class="btn" onclick="openWA('Hola! Me interesan hilos tensores. ¿Cómo es la valoración?')">Consultar</button>
+            </div>
           </div>
         </div>
 
         <div class="svc-card">
           <div class="svc-media">
             <img src="svc-foxyeyes.jpg" alt="Hilos foxy eyes" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-            <div class="ph" style="display:none">svc-foxyeyes.jpg</div>
+            <div class="ph" style="display:none">Imagen<br><small>svc-foxyeyes.jpg</small></div>
           </div>
           <div class="svc-body">
             <b>Hilos foxy eyes</b>
-            <p>Descripción aquí (me la envías y la reemplazo exacta).</p>
+            <p>Ideales para elevar el párpado o “rasgar” la mirada.</p>
+            <div class="svc-actions">
+              <button class="btn whatsapp" onclick="serviceWA('Hilos foxy eyes')">Contactar</button>
+              <button class="btn" onclick="openWA('Hola! Me interesan hilos foxy eyes. ¿Cómo es la valoración?')">Consultar</button>
+            </div>
           </div>
         </div>
 
@@ -873,95 +988,130 @@
     <div class="category">
       <div class="cat-head">
         <h3>Aparatología</h3>
-        <div class="hint">HIFU • Radiofrecuencia • Láser • Morpheus</div>
+        <div class="hint">HIFU • Radiofrecuencia • Láser</div>
       </div>
       <div class="cards">
 
         <div class="svc-card">
           <div class="svc-media">
             <img src="svc-hifu.jpg" alt="HIFU" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-            <div class="ph" style="display:none">svc-hifu.jpg</div>
+            <div class="ph" style="display:none">Imagen<br><small>svc-hifu.jpg</small></div>
           </div>
           <div class="svc-body">
             <b>HIFU</b>
-            <p>Descripción aquí (me la envías y la reemplazo exacta).</p>
+            <p>Aparatología para tensar la piel y eliminar grasa localizada.</p>
+            <div class="svc-actions">
+              <button class="btn whatsapp" onclick="serviceWA('HIFU')">Contactar</button>
+              <button class="btn" onclick="openWA('Hola! Quiero HIFU. ¿Qué resultados y cuántas sesiones?')">Detalles</button>
+            </div>
           </div>
         </div>
 
+        <!-- Mantengo Tecarterapia también aquí si la quieres como aparatología (imagen no está en tu lista) -->
         <div class="svc-card">
           <div class="svc-media">
             <img src="svc-tecarterapia.jpg" alt="Tecarterapia" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-            <div class="ph" style="display:none">svc-tecarterapia.jpg</div>
+            <div class="ph" style="display:none">Imagen<br><small>svc-tecarterapia.jpg</small></div>
           </div>
           <div class="svc-body">
             <b>Tecarterapia</b>
-            <p>Descripción aquí (me la envías y la reemplazo exacta).</p>
+            <p>Tecarterapia, capacitativa y reductiva.</p>
+            <div class="svc-actions">
+              <button class="btn whatsapp" onclick="serviceWA('Tecarterapia')">Contactar</button>
+              <button class="btn" onclick="openWA('Hola! Me interesa tecarterapia. ¿Para qué casos la recomiendan?')">Consultar</button>
+            </div>
           </div>
         </div>
 
         <div class="svc-card">
           <div class="svc-media">
             <img src="svc-rf-fraccionada.jpg" alt="Radiofrecuencia fraccionada" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-            <div class="ph" style="display:none">svc-rf-fraccionada.jpg</div>
+            <div class="ph" style="display:none">Imagen<br><small>svc-rf-fraccionada.jpg</small></div>
           </div>
           <div class="svc-body">
             <b>Radiofrecuencia fraccionada</b>
-            <p>Descripción aquí (me la envías y la reemplazo exacta).</p>
+            <p>Ideal para mejorar la calidad de la piel, inducción de colágeno y eliminación de flacidez.</p>
+            <div class="svc-actions">
+              <button class="btn whatsapp" onclick="serviceWA('Radiofrecuencia fraccionada')">Contactar</button>
+              <button class="btn" onclick="openWA('Hola! Quiero radiofrecuencia fraccionada. ¿Qué resultados se esperan?')">Detalles</button>
+            </div>
           </div>
         </div>
 
+        <!-- Mantengo Morpheus (imagen no está en tu lista) -->
         <div class="svc-card">
           <div class="svc-media">
             <img src="svc-morpheus.jpg" alt="Morpheus" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-            <div class="ph" style="display:none">svc-morpheus.jpg</div>
+            <div class="ph" style="display:none">Imagen<br><small>svc-morpheus.jpg</small></div>
           </div>
           <div class="svc-body">
             <b>Morpheus</b>
-            <p>Descripción aquí (me la envías y la reemplazo exacta).</p>
+            <p>Soporte avanzado para textura y firmeza (según valoración).</p>
+            <div class="svc-actions">
+              <button class="btn whatsapp" onclick="serviceWA('Morpheus')">Contactar</button>
+              <button class="btn" onclick="openWA('Hola! Me interesa Morpheus. ¿Qué resultados y cuidados?')">Detalles</button>
+            </div>
           </div>
         </div>
 
         <div class="svc-card">
           <div class="svc-media">
-            <img src="svc-laser.jpg" alt="Láser depilador diodo" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-            <div class="ph" style="display:none">svc-laser.jpg</div>
+            <img src="svc-laser.jpg" alt="Láser diodo" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+            <div class="ph" style="display:none">Imagen<br><small>svc-laser.jpg</small></div>
           </div>
           <div class="svc-body">
-            <b>Láser depilador diodo</b>
-            <p>Descripción aquí (me la envías y la reemplazo exacta).</p>
+            <b>Láser diodo</b>
+            <p>Este aparato sirve para eliminar el vello no deseado en todo el cuerpo.</p>
+            <div class="svc-actions">
+              <button class="btn whatsapp" onclick="serviceWA('Láser diodo')">Contactar</button>
+              <button class="btn" onclick="openWA('Hola! Me interesa láser diodo. ¿Qué zonas trabajan y precios?')">Zonas</button>
+            </div>
           </div>
         </div>
 
         <div class="svc-card">
           <div class="svc-media">
-            <img src="svc-laser-co2.jpg" alt="Láser fraccionado CO2" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-            <div class="ph" style="display:none">svc-laser-co2.jpg</div>
+            <img src="svc-laser-co2.jpg" alt="Láser fraccionado" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+            <div class="ph" style="display:none">Imagen<br><small>svc-laser-co2.jpg</small></div>
           </div>
           <div class="svc-body">
-            <b>Láser fraccionado CO2</b>
-            <p>Descripción aquí (me la envías y la reemplazo exacta).</p>
+            <b>Láser fraccionado</b>
+            <p>Ideal para un rejuvenecimiento intenso y mejorar la calidad de la piel.</p>
+            <div class="svc-actions">
+              <button class="btn whatsapp" onclick="serviceWA('Láser fraccionado')">Contactar</button>
+              <button class="btn" onclick="openWA('Hola! Me interesa láser fraccionado. ¿Cómo es la valoración?')">Consultar</button>
+            </div>
           </div>
         </div>
 
+        <!-- Mantengo Láser Nd:YAG (imagen no está en tu lista) -->
         <div class="svc-card">
           <div class="svc-media">
             <img src="svc-laser-ndyag.jpg" alt="Láser Nd:YAG" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-            <div class="ph" style="display:none">svc-laser-ndyag.jpg</div>
+            <div class="ph" style="display:none">Imagen<br><small>svc-laser-ndyag.jpg</small></div>
           </div>
           <div class="svc-body">
             <b>Láser Nd:YAG</b>
-            <p>Descripción aquí (me la envías y la reemplazo exacta).</p>
+            <p>Procedimiento láser (según valoración).</p>
+            <div class="svc-actions">
+              <button class="btn whatsapp" onclick="serviceWA('Láser Nd:YAG')">Contactar</button>
+              <button class="btn" onclick="openWA('Hola! Me interesa láser Nd:YAG. ¿Qué casos manejan?')">Consultar</button>
+            </div>
           </div>
         </div>
 
         <div class="svc-card">
           <div class="svc-media">
             <img src="svc-mesoterapia-pistola.jpg" alt="Mesoterapia con pistola" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-            <div class="ph" style="display:none">svc-mesoterapia-pistola.jpg</div>
+            <div class="ph" style="display:none">Imagen<br><small>svc-mesoterapia-pistola.jpg</small></div>
           </div>
           <div class="svc-body">
             <b>Mesoterapia con pistola</b>
-            <p>Descripción aquí (me la envías y la reemplazo exacta).</p>
+            <p>Ideal para evitar molestias y terapias capilares.</p>
+            <div class="svc-actions">
+              <button class="btn whatsapp" onclick="serviceWA('Mesoterapia con pistola')">Contactar</button>
+              <button class="btn" onclick="openWA('Hola! Quiero información de mesoterapia con pistola. ¿Qué objetivos trabaja?')">Detalles</button>
+            </div>
           </div>
         </div>
 
@@ -971,7 +1121,7 @@
   </div>
 </section>
 
-<!-- BLOG (puedes mantenerlo igual; luego metemos el tuyo si quieres) -->
+<!-- BLOG -->
 <section class="wide" id="blog">
   <div class="container">
     <div class="section-head">
@@ -983,11 +1133,15 @@
       <div class="panel">
         <h3>Hidrafacial: el “glow” que se nota desde la primera sesión</h3>
         <p>
-          El <b>Hidrafacial</b> es de los tratamientos más solicitados porque combina limpieza e hidratación, dejando
-          la piel luminosa y con mejor textura. Ideal para piel opaca, poros visibles o antes de un evento.
+          El <b>Hidrafacial</b> es uno de los tratamientos más solicitados porque combina limpieza profunda e hidratación,
+          dejando la piel luminosa y con mejor textura. Es ideal para piel opaca, poros visibles o antes de un evento.
           <br><br>
           En Estética Slim te orientamos según tu piel para elegir el protocolo correcto (según valoración).
         </p>
+        <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+          <button class="btn primary" onclick="serviceWA('Hidrafacial (por el blog)')">Quiero mi Hidrafacial</button>
+          <button class="btn" onclick="openWA('Hola! Vi el blog del Hidrafacial. Quiero saber precio/paquetes y agendar.')">Consultar</button>
+        </div>
       </div>
 
       <div class="panel">
@@ -998,8 +1152,41 @@
           <li><b>Tip:</b> Rutina + protector solar para mejores resultados.</li>
           <li><b>Dirección:</b> Calle Reina del Pasífico, casa 36, Pacífico</li>
         </ul>
+        <div style="margin-top:14px">
+          <button class="btn whatsapp" style="width:100%" onclick="openWA('Hola! Quiero recomendación de tratamiento según mi objetivo. ¿Me ayudan?')">
+            Pedir recomendación por WhatsApp
+          </button>
+        </div>
       </div>
     </div>
+
+    <div class="blog-card">
+      <div class="blog-media">
+        <img src="blog-armonizacion.jpg" alt="Armonización facial"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+        <div class="ph" style="display:none">
+          Imagen aquí<br>
+          <small>Sube: blog-armonizacion.jpg</small>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h3>Armonización facial: equilibrio, proporción y un resultado natural</h3>
+        <p>
+          La <b>armonización facial</b> busca mejorar la apariencia del rostro respetando tus rasgos, trabajando proporción,
+          simetría y equilibrio. No se trata de “cambiarte la cara”, sino de potenciar lo mejor de ti con un plan personalizado
+          (según valoración).
+          <br><br>
+          En Estética Slim te guiamos paso a paso con un plan claro, cuidados recomendados y seguimiento para que te sientas segura desde el inicio.
+        </p>
+
+        <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+          <button class="btn primary" onclick="serviceWA('Armonización facial (por el blog)')">Quiero evaluación</button>
+          <button class="btn" onclick="openWA('Hola! Vi el blog de Armonización facial. Quiero orientación y agendar.')">Consultar</button>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -1012,7 +1199,7 @@
     </div>
 
     <div class="panel">
-      <div class="muted" style="line-height:1.8;color:var(--muted)">
+      <div class="muted" style="line-height:1.7">
         <b>Correo:</b> Majostorem@gmail.com &nbsp;•&nbsp;
         <b>WhatsApp:</b> 6964-2071 &nbsp;•&nbsp;
         <b>Dirección:</b> Calle Reina del Pasífico, casa 36, Pacífico &nbsp;•&nbsp;
@@ -1043,10 +1230,10 @@
                 <option>Peeling</option>
                 <option>Mesoterapia inducida</option>
                 <option>Exosomas</option>
-                <option>Plasma rico en plaquetas (PRP)</option>
+                <option>PRP</option>
                 <option>Hollywood peeling</option>
                 <option>Tratamientos para manchas</option>
-                <option>Fibroblast (acrocordones y verrugas)</option>
+                <option>Fiborblast (acrocordones y verrugas)</option>
                 <option>Eliminación de arañitas</option>
                 <option>Sueroterapia ortomolecular</option>
               </optgroup>
@@ -1057,7 +1244,7 @@
                 <option>Moldeamiento corporal</option>
                 <option>Levantamiento de glúteos</option>
                 <option>Drenaje linfático</option>
-                <option>Terapias capacitativas y regenerativas</option>
+                <option>Tecarterapia, capacitativa y reductiva</option>
                 <option>Masajes corporales</option>
                 <option>Masajes relajantes</option>
               </optgroup>
@@ -1066,7 +1253,6 @@
                 <option>Botox</option>
                 <option>Ácido hialurónico</option>
                 <option>Bioestimuladores</option>
-                <option>PRP</option>
                 <option>Skinbooster</option>
                 <option>Endolifting</option>
                 <option>Armonización facial</option>
@@ -1079,8 +1265,8 @@
                 <option>Tecarterapia</option>
                 <option>Radiofrecuencia fraccionada</option>
                 <option>Morpheus</option>
-                <option>Láser depilador diodo</option>
-                <option>Láser fraccionado CO2</option>
+                <option>Láser diodo</option>
+                <option>Láser fraccionado</option>
                 <option>Láser Nd:YAG</option>
                 <option>Mesoterapia con pistola</option>
               </optgroup>
@@ -1100,6 +1286,7 @@
 
           <div class="field full" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between">
             <button class="btn whatsapp" type="submit">Enviar por WhatsApp</button>
+            <button class="btn" type="button" onclick="openWA('Hola! Quiero la ubicación exacta de Estética Slim. ¿Me la comparten por favor?')">Pedir ubicación</button>
           </div>
         </div>
       </form>
@@ -1143,12 +1330,23 @@
 
 <script>
   const WA_NUMBER = "50769642071";
+  const IG_HANDLE = "@esteticaslimpty";
 
   function openWA(text){
     const msg = encodeURIComponent(text);
     window.open(`https://wa.me/${WA_NUMBER}?text=${msg}`, "_blank", "noopener");
   }
+  function serviceWA(serviceName){
+    const text =
+`Hola! Soy ____.
+Me interesa: ${serviceName}.
+Quiero información de precio/paquetes y disponibilidad.
+Dirección: Calle Reina del Pasífico, casa 36, Pacífico.
+Instagram: ${IG_HANDLE}`;
+    openWA(text);
+  }
 
+  // Form -> WhatsApp
   document.getElementById("contactForm").addEventListener("submit", function(e){
     e.preventDefault();
     const name = (document.getElementById("name").value || "").trim();
@@ -1161,8 +1359,7 @@
 `Hola! Soy ${name}${phone ? " ("+phone+")" : ""}.
 Quiero agendar en Estética Slim.
 Servicio: ${service}
-${when ? "Cuándo: "+when : ""}
-${message ? "Mensaje: "+message : ""}
+${when ? "Cuándo: "+when : ""}${message ? "\nMensaje: "+message : ""}
 Dirección: Calle Reina del Pasífico, casa 36, Pacífico.`;
 
     openWA(text);
