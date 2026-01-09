@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Estética Slim | Estética Integral</title>
-  <meta name="description" content="Estética Slim: faciales, corporales, medicina estética y aparatología. Reserva por WhatsApp." />
+  <meta name="description" content="Estética Slim: faciales, corporales, medicina estética y aparatología. Agenda tu cita por WhatsApp." />
 
   <style>
     :root{
@@ -99,7 +99,7 @@
     }
     .btn.ghost{background:rgba(255,255,255,.70)}
 
-    /* Hero full width slider (ahora 1 solo slide) */
+    /* Hero full width slider (1 slide) */
     .hero-wrap{width:100%;background: var(--bg2);border-bottom:1px solid var(--line)}
     .slider{
       position:relative;overflow:hidden;
@@ -124,51 +124,42 @@
     }
     .overlay{
       position:absolute;inset:0;
-      background: linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.48));
+      background: linear-gradient(180deg, rgba(0,0,0,.38), rgba(0,0,0,.55));
     }
     .hero-content{
       position:relative;
       width:100%;
       max-width: var(--max);
-      padding: 70px 18px 78px;
+      padding: 86px 18px 86px;
       margin:0 auto;
       text-align:center;
       color:#fff;
     }
     .kicker{
       font-weight:900;letter-spacing:.5px;text-transform:uppercase;
-      font-size:.9rem;opacity:.92;
+      font-size:.92rem;opacity:.94;
     }
     .hero-content h1{
-      margin:10px auto 12px;
-      font-size: clamp(2rem, 3.6vw, 3.4rem);
+      margin:12px auto 10px;
+      font-size: clamp(2.4rem, 4.2vw, 3.9rem);
       letter-spacing:-1px;
-      line-height:1.05;
-      max-width: 22ch;
+      line-height:1.02;
+      max-width: 18ch;
       text-shadow: 0 12px 30px rgba(0,0,0,.25);
     }
     .hero-content p{
-      margin:0 auto 18px;
-      font-size:1.08rem;
-      line-height:1.55;
-      max-width: 75ch;
-      opacity:.92;
+      margin:0 auto 0;
+      font-size:1.15rem;
+      line-height:1.6;
+      max-width: 78ch;
+      opacity:.94;
     }
-    .hero-cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:10px}
-    .hero-strip{
-      margin-top: 26px;
-      display:flex;gap:14px;justify-content:center;flex-wrap:wrap;
+    .hero-slogan{
+      margin-top: 10px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      opacity: .96;
     }
-    .strip{
-      background: rgba(255,255,255,.14);
-      border: 1px solid rgba(255,255,255,.20);
-      border-radius: 16px;
-      padding: 12px 14px;
-      min-width: 220px;
-      backdrop-filter: blur(8px);
-    }
-    .strip b{display:block;font-size:1rem}
-    .strip span{display:block;font-size:.9rem;opacity:.92}
 
     /* Sections */
     section{padding:54px 0}
@@ -261,7 +252,7 @@
       box-shadow: var(--shadow2);
       overflow:hidden;
       display:flex;flex-direction:column;
-      min-height: 220px;
+      min-height: 240px;
     }
     .svc-media{
       height: 150px;
@@ -377,7 +368,7 @@
       .svc-card{grid-column: span 6}
       .wide .inner{grid-template-columns: 1fr}
       .slider,.slide{min-height: 500px}
-      .hero-content{padding: 62px 18px 78px}
+      .hero-content{padding: 74px 18px 78px}
       .about-grid{grid-template-columns: 1fr}
       .blog-card{grid-template-columns: 1fr}
     }
@@ -386,7 +377,6 @@
       .field{grid-column: span 12}
       .wa-float .txt{display:none}
       .slider,.slide{min-height: 460px}
-      .strip{min-width: 100%}
     }
   </style>
 </head>
@@ -439,28 +429,15 @@
 <div class="hero-wrap" id="inicio">
   <div class="slider">
     <div class="slides" id="slides">
-
-      <!-- SOLO 1 SLIDE (se removió el 2 y 3, sin cambiar el resto) -->
       <div class="slide">
-        <img class="bgimg" src="slide-1.jpg" alt="Slide 1" onerror="this.remove()">
+        <img class="bgimg" src="slide-1.jpg" alt="Estética Slim" onerror="this.remove()">
         <div class="overlay"></div>
         <div class="hero-content">
           <div class="kicker">Centro de Estética • Bienestar y Belleza</div>
-          <h1>Transforma tu piel y realza tu belleza desde hoy</h1>
-          <p>Tratamientos faciales, estética integral y protocolos modernos para lograr resultados reales (según valoración).</p>
-          <div class="hero-cta">
-            <button class="btn primary" onclick="openWA('Hola! Quiero agendar una cita en Estética Slim. ¿Me comparten disponibilidad?')">Haz tu cita</button>
-            <a class="btn ghost" href="#servicios">Ver tratamientos</a>
-          </div>
-
-          <div class="hero-strip">
-            <div class="strip"><b>📍 Ubicación</b><span>Calle Reina del Pasífico, casa 36, Panamá</span></div>
-            <div class="strip"><b>💬 WhatsApp</b><span>6964-2071</span></div>
-            <div class="strip"><b>📸 Instagram</b><span>@esteticaslimpty</span></div>
-          </div>
+          <h1>ESTÉTICA SLIM</h1>
+          <p class="hero-slogan">La salud de tu cuerpo y tu piel está en nuestras manos</p>
         </div>
       </div>
-
     </div>
   </div>
 </div>
@@ -470,13 +447,12 @@
   <div class="container">
     <div class="section-head">
       <h2>Sobre Estética Slim</h2>
-      <p>Más que estética: un espacio pensado para tu bienestar, tu confianza y resultados que se notan.</p>
+      <p>Un espacio ideado para tu bienestar, donde buscamos que te sientas segura, acompañada y feliz con tus resultados.</p>
     </div>
 
     <div class="about-grid">
       <!-- IZQUIERDA: Imagen (placeholder) -->
       <div class="about-media">
-        <!-- Cambia este src por tu imagen cuando la subas -->
         <img src="about-esteticista.jpg" alt="Esteticista en Estética Slim"
              onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
         <div class="ph" style="display:none">
@@ -488,30 +464,28 @@
 
       <!-- DERECHA: Historia -->
       <div class="about-card">
-        <h3>Una historia de confianza, resultados y cuidado real</h3>
+        <h3>Nuestra historia</h3>
         <p>
-          En <b>Estética Slim</b> llevamos más de <b>18 años de experiencia</b> acompañando a mujeres y hombres en su camino
-          hacia una piel más saludable, un cuerpo más armonioso y una autoestima más alta.
+          Somos una empresa constituida desde <b>2015</b> y, a lo largo de <b>10 años de experiencia</b>, hemos acompañado a nuestros pacientes
+          en cada proceso para lograr un equilibrio entre lo estético y lo emocional, brindando <b>armonía, bienestar y seguridad</b> en sus tratamientos.
           <br><br>
-          Nuestra historia nace de una idea simple: <b>hacer las cosas bien</b>. Escuchar a cada cliente, evaluar su caso y
-          recomendar el tratamiento adecuado, sin promesas vacías. Con el tiempo, fuimos integrando protocolos faciales,
-          corporales, aparatología y medicina estética, siempre con un enfoque profesional y humano.
+          Nuestra historia comienza en el cuidado real del paciente: <b>escuchamos cada necesidad</b>, evaluamos cada caso (tanto en lo físico como en salud)
+          y diseñamos un protocolo <b>100% personalizado</b> y eficaz.
           <br><br>
-          Hoy, ofrecemos desde <b>hidrafaciales, peeling, control de acné y manchas</b>, hasta <b>moldeamiento corporal,
-          drenaje linfático, masajes</b> y <b>opciones avanzadas</b> como armonización, bioestimulación y aparatología,
-          guiándote paso a paso para que elijas lo correcto para ti.
+          Con el tiempo fuimos creciendo e integrando nuevos protocolos que van a la vanguardia, manteniendo siempre un enfoque <b>profesional y humano</b>.
+          Hoy te ofrecemos más que tratamientos: <b>la mejor experiencia</b>, donde paso a paso elegimos, bajo tus parámetros, lo mejor para ti,
+          con productos de calidad y un equipo enfocado en tu bienestar y confianza.
         </p>
 
         <ul class="about-bullets">
-          <li><b>Evaluación personalizada</b> y orientación honesta.</li>
-          <li><b>Protocolos combinados</b> (faciales + corporales) según objetivo.</li>
-          <li><b>Ambiente privado</b>, cuidado y atención cálida.</li>
-          <li><b>Enfoque en resultados reales</b> y seguimiento.</li>
+          <li><b>Evaluación personalizada</b> con orientación de acuerdo a tus necesidades.</li>
+          <li><b>Protocolos combinados</b> de acuerdo a tu piel y a tu objetivo.</li>
+          <li><b>Ambiente privado</b> con cuidados y atención personalizada, enfocados en los resultados que deseas.</li>
         </ul>
 
         <div class="about-cta">
-          <button class="btn primary" onclick="openWA('Hola! Quiero una recomendación personalizada. ¿Me orientan según mi objetivo?')">Quiero recomendación</button>
-          <a class="btn" href="#servicios">Ver lo que ofrecemos</a>
+          <button class="btn primary" onclick="openWA('Hola! Quiero una evaluación y recomendación personalizada en Estética Slim. ¿Me orientan según mi objetivo?')">Quiero evaluación</button>
+          <a class="btn" href="#servicios">Ver tratamientos</a>
         </div>
       </div>
     </div>
@@ -523,7 +497,7 @@
   <div class="container">
     <div class="section-head">
       <h2>Tratamientos y Servicios</h2>
-      <p>Lista completa segmentada por categorías. Cada tarjeta incluye espacio para imagen y botón directo de WhatsApp.</p>
+      <p>Servicios segmentados por categoría. Cada tarjeta incluye imagen, descripción y botón directo para reservar por WhatsApp.</p>
     </div>
 
     <!-- Estética Integral -->
@@ -540,10 +514,9 @@
           </div>
           <div class="svc-body">
             <b>Facial sencillo</b>
-            <p>Limpieza ligera + hidratación para mantenimiento.</p>
+            <p>Se centra en la limpieza y el mantenimiento de la piel.</p>
             <div class="svc-actions">
               <button class="btn whatsapp" onclick="serviceWA('Facial sencillo')">Contactar</button>
-              <button class="btn" onclick="openWA('Hola! Quiero info del Facial sencillo: precio, duración y qué incluye.')">Detalles</button>
             </div>
           </div>
         </div>
@@ -555,10 +528,9 @@
           </div>
           <div class="svc-body">
             <b>Facial profundo</b>
-            <p>Limpieza profunda y cuidado según tu tipo de piel.</p>
+            <p>Se centra en eliminar impurezas de la piel incluyendo aparatología.</p>
             <div class="svc-actions">
               <button class="btn whatsapp" onclick="serviceWA('Facial profundo')">Contactar</button>
-              <button class="btn" onclick="openWA('Hola! Quiero info del Facial profundo: precio, duración y cuidados.')">Detalles</button>
             </div>
           </div>
         </div>
@@ -570,10 +542,9 @@
           </div>
           <div class="svc-body">
             <b>Hidrafacial</b>
-            <p>Glow inmediato, hidratación y limpieza moderna.</p>
+            <p>Consiste en realizar una limpieza facial profunda enfocada en hidratación con aparatología.</p>
             <div class="svc-actions">
               <button class="btn whatsapp" onclick="serviceWA('Hidrafacial')">Contactar</button>
-              <button class="btn" onclick="openWA('Hola! Quiero saber precio y duración del Hidrafacial. ¿Qué incluye?')">Detalles</button>
             </div>
           </div>
         </div>
@@ -585,10 +556,9 @@
           </div>
           <div class="svc-body">
             <b>Tratamientos para el acné</b>
-            <p>Protocolos para brotes, comedones y marcas.</p>
+            <p>Tratamientos para el acné tipo 1 y 2 con diferentes protocolos.</p>
             <div class="svc-actions">
               <button class="btn whatsapp" onclick="serviceWA('Tratamientos para el acné')">Contactar</button>
-              <button class="btn" onclick="openWA('Hola! Quiero controlar el acné. ¿Cuántas sesiones recomiendan?')">Consultar</button>
             </div>
           </div>
         </div>
@@ -600,10 +570,9 @@
           </div>
           <div class="svc-body">
             <b>Peeling</b>
-            <p>Renovación de piel, textura y luminosidad.</p>
+            <p>Tratamientos para diferentes necesidades de la piel; son químicos y con aparatología.</p>
             <div class="svc-actions">
               <button class="btn whatsapp" onclick="serviceWA('Peeling')">Contactar</button>
-              <button class="btn" onclick="openWA('Hola! Me interesa peeling. ¿Cuál me recomiendan según mi piel?')">Recomendación</button>
             </div>
           </div>
         </div>
@@ -615,25 +584,37 @@
           </div>
           <div class="svc-body">
             <b>Mesoterapia inducida</b>
-            <p>Activos para hidratación y soporte de piel.</p>
+            <p>Se basa en aplicar principios activos para mejorar la calidad de la piel.</p>
             <div class="svc-actions">
               <button class="btn whatsapp" onclick="serviceWA('Mesoterapia inducida')">Contactar</button>
-              <button class="btn" onclick="openWA('Hola! Quiero info de mesoterapia inducida: objetivos y sesiones.')">Detalles</button>
             </div>
           </div>
         </div>
 
         <div class="svc-card">
           <div class="svc-media">
-            <img src="svc-exosomas-prp.jpg" alt="Exosomas / PRP" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+            <img src="svc-exosomas-prp.jpg" alt="Exosomas" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
             <div class="ph" style="display:none">Imagen<br><small>svc-exosomas-prp.jpg</small></div>
           </div>
           <div class="svc-body">
-            <b>Exosomas / PRP</b>
-            <p>Protocolos regenerativos (según evaluación).</p>
+            <b>Exosomas</b>
+            <p>Nueva tecnología para reparar y rejuvenecer las células y la piel.</p>
             <div class="svc-actions">
-              <button class="btn whatsapp" onclick="serviceWA('Exosomas / PRP')">Contactar</button>
-              <button class="btn" onclick="openWA('Hola! Me interesa Exosomas/PRP. ¿Qué incluye la valoración?')">Consultar</button>
+              <button class="btn whatsapp" onclick="serviceWA('Exosomas')">Contactar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="svc-card">
+          <div class="svc-media">
+            <img src="svc-prp.jpg" alt="PRP" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+            <div class="ph" style="display:none">Imagen<br><small>svc-prp.jpg</small></div>
+          </div>
+          <div class="svc-body">
+            <b>Plasma rico en plaquetas (PRP)</b>
+            <p>Ideal para apoyar procesos de regeneración celular.</p>
+            <div class="svc-actions">
+              <button class="btn whatsapp" onclick="serviceWA('Plasma rico en plaquetas (PRP)')">Contactar</button>
             </div>
           </div>
         </div>
@@ -645,10 +626,9 @@
           </div>
           <div class="svc-body">
             <b>Hollywood peeling</b>
-            <p>Luminosidad y apariencia uniforme.</p>
+            <p>Ideal para tratar manchas y eliminar flacidez.</p>
             <div class="svc-actions">
               <button class="btn whatsapp" onclick="serviceWA('Hollywood peeling')">Contactar</button>
-              <button class="btn" onclick="openWA('Hola! Quiero Hollywood peeling. ¿Qué cuidados se recomiendan?')">Detalles</button>
             </div>
           </div>
         </div>
@@ -660,10 +640,9 @@
           </div>
           <div class="svc-body">
             <b>Tratamientos para manchas</b>
-            <p>Apoyo para pigmentación y tono irregular.</p>
+            <p>Diferentes protocolos para tratar afecciones de la piel como el melasma.</p>
             <div class="svc-actions">
               <button class="btn whatsapp" onclick="serviceWA('Tratamientos para manchas')">Contactar</button>
-              <button class="btn" onclick="openWA('Hola! Me interesan tratamientos para manchas. ¿Qué me recomiendan según mi piel?')">Consultar</button>
             </div>
           </div>
         </div>
@@ -674,11 +653,10 @@
             <div class="ph" style="display:none">Imagen<br><small>svc-fibroblast-verrugas.jpg</small></div>
           </div>
           <div class="svc-body">
-            <b>Fibroblast + acrocordones/verrugas</b>
-            <p>Procedimientos estéticos (según evaluación).</p>
+            <b>Fibroblast (acrocordones y verrugas)</b>
+            <p>Este dispositivo ayuda a retraer el exceso de piel; elimina arrugas y acrocordones.</p>
             <div class="svc-actions">
-              <button class="btn whatsapp" onclick="serviceWA('Fibroblast + acrocordones/verrugas')">Contactar</button>
-              <button class="btn" onclick="openWA('Hola! Quiero info de Fibroblast / acrocordones / verrugas. ¿Cómo es la valoración?')">Consultar</button>
+              <button class="btn whatsapp" onclick="serviceWA('Fibroblast (acrocordones y verrugas)')">Contactar</button>
             </div>
           </div>
         </div>
@@ -690,10 +668,9 @@
           </div>
           <div class="svc-body">
             <b>Eliminación de arañitas</b>
-            <p>Soporte estético para arañitas (consulta).</p>
+            <p>Diferentes protocolos para eliminación de arañitas con productos y aparatología.</p>
             <div class="svc-actions">
               <button class="btn whatsapp" onclick="serviceWA('Eliminación de arañitas')">Contactar</button>
-              <button class="btn" onclick="openWA('Hola! Me interesan eliminación de arañitas. ¿Cómo trabajan la valoración?')">Consultar</button>
             </div>
           </div>
         </div>
@@ -705,10 +682,9 @@
           </div>
           <div class="svc-body">
             <b>Sueroterapia ortomolecular</b>
-            <p>Soporte de bienestar y vitaminas (según plan).</p>
+            <p>Ideal para diferentes necesidades y patologías en el cuerpo.</p>
             <div class="svc-actions">
               <button class="btn whatsapp" onclick="serviceWA('Sueroterapia ortomolecular')">Contactar</button>
-              <button class="btn" onclick="openWA('Hola! Quiero info de sueroterapia: opciones y duración.')">Detalles</button>
             </div>
           </div>
         </div>
@@ -731,10 +707,9 @@
           </div>
           <div class="svc-body">
             <b>Hidrolipoclasia</b>
-            <p>Procedimiento corporal (según valoración).</p>
+            <p>Procedimiento corporal (según valoración y objetivo).</p>
             <div class="svc-actions">
               <button class="btn whatsapp" onclick="serviceWA('Hidrolipoclasia')">Contactar</button>
-              <button class="btn" onclick="openWA('Hola! Me interesa Hidrolipoclasia. ¿Qué incluye la valoración?')">Consultar</button>
             </div>
           </div>
         </div>
@@ -746,10 +721,9 @@
           </div>
           <div class="svc-body">
             <b>Reducción de talla</b>
-            <p>Plan por zonas con metas reales.</p>
+            <p>Plan por zonas con metas realistas y acompañamiento.</p>
             <div class="svc-actions">
               <button class="btn whatsapp" onclick="serviceWA('Reducción de talla')">Contactar</button>
-              <button class="btn" onclick="openWA('Hola! Me interesa reducción de talla. ¿Tienen paquetes por sesiones?')">Paquetes</button>
             </div>
           </div>
         </div>
@@ -761,10 +735,9 @@
           </div>
           <div class="svc-body">
             <b>Moldeamiento corporal</b>
-            <p>Enfoque por zonas y definición.</p>
+            <p>Enfoque por zonas para definición y armonía corporal.</p>
             <div class="svc-actions">
               <button class="btn whatsapp" onclick="serviceWA('Moldeamiento corporal')">Contactar</button>
-              <button class="btn" onclick="openWA('Hola! Quiero info de moldeamiento corporal: sesiones y objetivos.')">Detalles</button>
             </div>
           </div>
         </div>
@@ -776,10 +749,9 @@
           </div>
           <div class="svc-body">
             <b>Levantamiento de glúteos</b>
-            <p>Protocolo estético para realce y forma.</p>
+            <p>Protocolo estético para realce, forma y firmeza.</p>
             <div class="svc-actions">
               <button class="btn whatsapp" onclick="serviceWA('Levantamiento de glúteos')">Contactar</button>
-              <button class="btn" onclick="openWA('Hola! Me interesa levantamiento de glúteos. ¿Qué incluye el plan?')">Consultar</button>
             </div>
           </div>
         </div>
@@ -791,10 +763,9 @@
           </div>
           <div class="svc-body">
             <b>Drenaje linfático</b>
-            <p>Apoyo para desinflamar y bienestar.</p>
+            <p>Apoyo para desinflamar, mejorar circulación y bienestar.</p>
             <div class="svc-actions">
               <button class="btn whatsapp" onclick="serviceWA('Drenaje linfático')">Contactar</button>
-              <button class="btn" onclick="openWA('Hola! Quiero drenaje linfático. ¿Cuánto dura y para quién es ideal?')">Detalles</button>
             </div>
           </div>
         </div>
@@ -806,10 +777,9 @@
           </div>
           <div class="svc-body">
             <b>Terapias capacitativas y regenerativas</b>
-            <p>Soporte de tejidos y bienestar (consulta).</p>
+            <p>Soporte de tejidos y bienestar (según evaluación).</p>
             <div class="svc-actions">
               <button class="btn whatsapp" onclick="serviceWA('Terapias capacitativas y regenerativas')">Contactar</button>
-              <button class="btn" onclick="openWA('Hola! Quiero info de terapias capacitativas y regenerativas. ¿Qué recomiendan?')">Consultar</button>
             </div>
           </div>
         </div>
@@ -824,7 +794,6 @@
             <p>Alivio de tensiones y cuidado muscular.</p>
             <div class="svc-actions">
               <button class="btn whatsapp" onclick="serviceWA('Masajes corporales')">Contactar</button>
-              <button class="btn" onclick="openWA('Hola! Quiero masajes corporales. ¿Qué tipos manejan?')">Detalles</button>
             </div>
           </div>
         </div>
@@ -836,10 +805,9 @@
           </div>
           <div class="svc-body">
             <b>Masajes relajantes</b>
-            <p>Relajación profunda, estrés y bienestar.</p>
+            <p>Relajación profunda para reducir estrés y recargar energía.</p>
             <div class="svc-actions">
               <button class="btn whatsapp" onclick="serviceWA('Masajes relajantes')">Contactar</button>
-              <button class="btn" onclick="openWA('Hola! Quiero masaje relajante. ¿Qué horarios tienen?')">Horarios</button>
             </div>
           </div>
         </div>
@@ -862,10 +830,9 @@
           </div>
           <div class="svc-body">
             <b>Botox</b>
-            <p>Armoniza líneas de expresión (valoración).</p>
+            <p>Elimina arrugas dinámicas y estáticas.</p>
             <div class="svc-actions">
               <button class="btn whatsapp" onclick="serviceWA('Botox')">Contactar</button>
-              <button class="btn" onclick="openWA('Hola! Me interesa Botox. ¿Cómo es la valoración y cuidados?')">Consultar</button>
             </div>
           </div>
         </div>
@@ -877,10 +844,9 @@
           </div>
           <div class="svc-body">
             <b>Ácido hialurónico</b>
-            <p>Soporte para armonización (consulta).</p>
+            <p>Ideal para rellenar, posicionar e hidratar a profundidad.</p>
             <div class="svc-actions">
               <button class="btn whatsapp" onclick="serviceWA('Ácido hialurónico')">Contactar</button>
-              <button class="btn" onclick="openWA('Hola! Me interesa ácido hialurónico. ¿Qué zonas trabajan?')">Zonas</button>
             </div>
           </div>
         </div>
@@ -892,29 +858,14 @@
           </div>
           <div class="svc-body">
             <b>Bioestimuladores</b>
-            <p>Soporte para firmeza y piel (según plan).</p>
+            <p>Inducción de colágeno, rejuvenecimiento y mejora de flacidez.</p>
             <div class="svc-actions">
               <button class="btn whatsapp" onclick="serviceWA('Bioestimuladores')">Contactar</button>
-              <button class="btn" onclick="openWA('Hola! Quiero info de bioestimuladores. ¿Cómo es la valoración?')">Consultar</button>
             </div>
           </div>
         </div>
 
-        <div class="svc-card">
-          <div class="svc-media">
-            <img src="svc-prp.jpg" alt="PRP" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-            <div class="ph" style="display:none">Imagen<br><small>svc-prp.jpg</small></div>
-          </div>
-          <div class="svc-body">
-            <b>PRP</b>
-            <p>Protocolo regenerativo (según evaluación).</p>
-            <div class="svc-actions">
-              <button class="btn whatsapp" onclick="serviceWA('PRP')">Contactar</button>
-              <button class="btn" onclick="openWA('Hola! Me interesa PRP. ¿Qué incluye y cuántas sesiones?')">Detalles</button>
-            </div>
-          </div>
-        </div>
-
+        <!-- Los siguientes quedan listos para que me mandes las descripciones y los ajusto -->
         <div class="svc-card">
           <div class="svc-media">
             <img src="svc-skinbooster.jpg" alt="Skinbooster" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
@@ -922,10 +873,9 @@
           </div>
           <div class="svc-body">
             <b>Skinbooster</b>
-            <p>Hidratación profunda y glow (consulta).</p>
+            <p>Hidratación profunda y mejora de textura (según evaluación).</p>
             <div class="svc-actions">
               <button class="btn whatsapp" onclick="serviceWA('Skinbooster')">Contactar</button>
-              <button class="btn" onclick="openWA('Hola! Quiero Skinbooster. ¿Qué resultados se esperan?')">Detalles</button>
             </div>
           </div>
         </div>
@@ -940,7 +890,6 @@
             <p>Procedimiento avanzado (según valoración).</p>
             <div class="svc-actions">
               <button class="btn whatsapp" onclick="serviceWA('Endolifting')">Contactar</button>
-              <button class="btn" onclick="openWA('Hola! Me interesa Endolifting. ¿Cómo es la valoración?')">Consultar</button>
             </div>
           </div>
         </div>
@@ -952,10 +901,9 @@
           </div>
           <div class="svc-body">
             <b>Armonización facial</b>
-            <p>Plan estético según rasgos y objetivo.</p>
+            <p>Plan estético según rasgos y objetivo (previa evaluación).</p>
             <div class="svc-actions">
               <button class="btn whatsapp" onclick="serviceWA('Armonización facial')">Contactar</button>
-              <button class="btn" onclick="openWA('Hola! Quiero armonización facial. ¿Qué recomiendan según mi objetivo?')">Consultar</button>
             </div>
           </div>
         </div>
@@ -967,10 +915,9 @@
           </div>
           <div class="svc-body">
             <b>Hilos tensores</b>
-            <p>Soporte para firmeza (consulta).</p>
+            <p>Soporte para firmeza y efecto lifting (según valoración).</p>
             <div class="svc-actions">
               <button class="btn whatsapp" onclick="serviceWA('Hilos tensores')">Contactar</button>
-              <button class="btn" onclick="openWA('Hola! Me interesan hilos tensores. ¿Cómo es la valoración?')">Consultar</button>
             </div>
           </div>
         </div>
@@ -982,10 +929,9 @@
           </div>
           <div class="svc-body">
             <b>Hilos foxy eyes</b>
-            <p>Procedimiento estético (según evaluación).</p>
+            <p>Procedimiento estético para realce (según evaluación).</p>
             <div class="svc-actions">
               <button class="btn whatsapp" onclick="serviceWA('Hilos foxy eyes')">Contactar</button>
-              <button class="btn" onclick="openWA('Hola! Me interesan hilos foxy eyes. ¿Cómo es la valoración?')">Consultar</button>
             </div>
           </div>
         </div>
@@ -1008,10 +954,9 @@
           </div>
           <div class="svc-body">
             <b>HIFU</b>
-            <p>Soporte de firmeza (según evaluación).</p>
+            <p>Soporte para firmeza y efecto tensor (según evaluación).</p>
             <div class="svc-actions">
               <button class="btn whatsapp" onclick="serviceWA('HIFU')">Contactar</button>
-              <button class="btn" onclick="openWA('Hola! Quiero HIFU. ¿Qué resultados y cuántas sesiones?')">Detalles</button>
             </div>
           </div>
         </div>
@@ -1023,10 +968,9 @@
           </div>
           <div class="svc-body">
             <b>Tecarterapia</b>
-            <p>Soporte de tejidos y recuperación (consulta).</p>
+            <p>Soporte de tejidos y recuperación (según evaluación).</p>
             <div class="svc-actions">
               <button class="btn whatsapp" onclick="serviceWA('Tecarterapia')">Contactar</button>
-              <button class="btn" onclick="openWA('Hola! Me interesa tecarterapia. ¿Para qué casos la recomiendan?')">Consultar</button>
             </div>
           </div>
         </div>
@@ -1038,25 +982,9 @@
           </div>
           <div class="svc-body">
             <b>Radiofrecuencia fraccionada</b>
-            <p>Soporte para firmeza y textura (consulta).</p>
+            <p>Soporte para firmeza y textura de la piel (según evaluación).</p>
             <div class="svc-actions">
               <button class="btn whatsapp" onclick="serviceWA('Radiofrecuencia fraccionada')">Contactar</button>
-              <button class="btn" onclick="openWA('Hola! Quiero radiofrecuencia fraccionada. ¿Qué resultados se esperan?')">Detalles</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="svc-card">
-          <div class="svc-media">
-            <img src="svc-endolifting.jpg" alt="Endolifting (aparatología)" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-            <div class="ph" style="display:none">Imagen<br><small>svc-endolifting.jpg</small></div>
-          </div>
-          <div class="svc-body">
-            <b>Endolifting</b>
-            <p>Procedimiento avanzado (según evaluación).</p>
-            <div class="svc-actions">
-              <button class="btn whatsapp" onclick="serviceWA('Endolifting (Aparatología)')">Contactar</button>
-              <button class="btn" onclick="openWA('Hola! Me interesa Endolifting. ¿Cómo es la valoración?')">Consultar</button>
             </div>
           </div>
         </div>
@@ -1068,10 +996,9 @@
           </div>
           <div class="svc-body">
             <b>Morpheus</b>
-            <p>Soporte avanzado para textura y firmeza (consulta).</p>
+            <p>Tratamiento avanzado para textura y firmeza (según evaluación).</p>
             <div class="svc-actions">
               <button class="btn whatsapp" onclick="serviceWA('Morpheus')">Contactar</button>
-              <button class="btn" onclick="openWA('Hola! Me interesa Morpheus. ¿Qué resultados y cuidados?')">Detalles</button>
             </div>
           </div>
         </div>
@@ -1086,7 +1013,6 @@
             <p>Depilación por zonas (consulta disponibilidad).</p>
             <div class="svc-actions">
               <button class="btn whatsapp" onclick="serviceWA('Láser depilador diodo')">Contactar</button>
-              <button class="btn" onclick="openWA('Hola! Me interesa láser diodo. ¿Qué zonas trabajan y precios?')">Zonas</button>
             </div>
           </div>
         </div>
@@ -1098,10 +1024,9 @@
           </div>
           <div class="svc-body">
             <b>Láser fraccionado CO2</b>
-            <p>Soporte para textura y rejuvenecimiento (consulta).</p>
+            <p>Soporte para textura y rejuvenecimiento (según evaluación).</p>
             <div class="svc-actions">
               <button class="btn whatsapp" onclick="serviceWA('Láser fraccionado CO2')">Contactar</button>
-              <button class="btn" onclick="openWA('Hola! Me interesa láser fraccionado CO2. ¿Cómo es la valoración?')">Consultar</button>
             </div>
           </div>
         </div>
@@ -1116,7 +1041,6 @@
             <p>Procedimiento láser (según evaluación).</p>
             <div class="svc-actions">
               <button class="btn whatsapp" onclick="serviceWA('Láser Nd:YAG')">Contactar</button>
-              <button class="btn" onclick="openWA('Hola! Me interesa láser Nd:YAG. ¿Qué casos manejan?')">Consultar</button>
             </div>
           </div>
         </div>
@@ -1128,10 +1052,9 @@
           </div>
           <div class="svc-body">
             <b>Mesoterapia con pistola</b>
-            <p>Aplicación de activos (según plan).</p>
+            <p>Aplicación de activos (según plan y objetivo).</p>
             <div class="svc-actions">
               <button class="btn whatsapp" onclick="serviceWA('Mesoterapia con pistola')">Contactar</button>
-              <button class="btn" onclick="openWA('Hola! Quiero info de mesoterapia con pistola. ¿Qué objetivos trabaja?')">Detalles</button>
             </div>
           </div>
         </div>
@@ -1142,7 +1065,7 @@
   </div>
 </section>
 
-<!-- BLOG (ancho) + NUEVO BLOG ARMONIZACIÓN FACIAL -->
+<!-- BLOG -->
 <section class="wide" id="blog">
   <div class="container">
     <div class="section-head">
@@ -1161,7 +1084,6 @@
         </p>
         <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
           <button class="btn primary" onclick="serviceWA('Hidrafacial (por el blog)')">Quiero mi Hidrafacial</button>
-          <button class="btn" onclick="openWA('Hola! Vi el blog del Hidrafacial. Quiero saber precio/paquetes y agendar.')">Consultar</button>
         </div>
       </div>
 
@@ -1171,7 +1093,7 @@
           <li><b>¿Para quién es?</b> Piel opaca, poros visibles, textura irregular.</li>
           <li><b>¿Cada cuánto?</b> Para evento o mantenimiento (te guiamos).</li>
           <li><b>Tip:</b> Rutina + protector solar para mejores resultados.</li>
-          <li><b>Dirección:</b> Calle Reina del Pasífico, casa 36, Panamá</li>
+          <li><b>Dirección:</b> Calle Reina del Pacífico, casa 36, Pacífico</li>
         </ul>
         <div style="margin-top:14px">
           <button class="btn whatsapp" style="width:100%" onclick="openWA('Hola! Quiero recomendación de tratamiento según mi objetivo. ¿Me ayudan?')">
@@ -1181,36 +1103,27 @@
       </div>
     </div>
 
-    <!-- NUEVO BLOG: ARMONIZACIÓN FACIAL (con imagen) -->
+    <!-- Blog extra -->
     <div class="blog-card">
       <div class="blog-media">
-        <!-- Cambia este src por tu imagen cuando la subas -->
         <img src="blog-armonizacion.jpg" alt="Armonización facial"
              onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
         <div class="ph" style="display:none">
           Imagen aquí<br>
-          <small>Sube: blog-armonizacion.jpg</small><br><br>
-          (rostro / armonización / estética)
+          <small>Sube: blog-armonizacion.jpg</small>
         </div>
       </div>
 
       <div class="panel">
         <h3>Armonización facial: equilibrio, proporción y un resultado natural</h3>
         <p>
-          La <b>armonización facial</b> es un enfoque estético que busca mejorar la apariencia del rostro respetando tus rasgos,
-          trabajando <b>proporción, simetría y equilibrio</b>. No se trata de “cambiarte la cara”, sino de potenciar lo mejor de ti
-          con un plan personalizado (según valoración).
-          <br><br>
-          Dependiendo del caso, se pueden considerar técnicas como hidratación profunda, bioestimulación, soporte de volumen en puntos estratégicos
-          y manejo de líneas de expresión. Lo ideal es una evaluación para definir qué se adapta a tu objetivo: verte más descansada, rejuvenecer,
-          mejorar contorno o realzar ciertos rasgos.
-          <br><br>
-          En Estética Slim te guiamos paso a paso con un plan claro, cuidados recomendados y seguimiento para que te sientas segura desde el inicio.
+          La <b>armonización facial</b> busca mejorar la apariencia del rostro respetando tus rasgos, trabajando
+          proporción, simetría y equilibrio. No se trata de “cambiarte la cara”, sino de potenciar lo mejor de ti con un plan personalizado
+          (según evaluación).
         </p>
 
         <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
           <button class="btn primary" onclick="serviceWA('Armonización facial (por el blog)')">Quiero evaluación</button>
-          <button class="btn" onclick="openWA('Hola! Vi el blog de Armonización facial. Quiero orientación según mi objetivo y agendar.')">Consultar por WhatsApp</button>
         </div>
       </div>
     </div>
@@ -1230,7 +1143,7 @@
       <div class="muted" style="line-height:1.7">
         <b>Correo:</b> Majostorem@gmail.com &nbsp;•&nbsp;
         <b>WhatsApp:</b> 6964-2071 &nbsp;•&nbsp;
-        <b>Dirección:</b> Calle Reina del Pasífico, casa 36, Pacífico &nbsp;•&nbsp;
+        <b>Dirección:</b> Calle Reina del Pacífico, casa 36, Pacífico &nbsp;•&nbsp;
         <b>IG:</b> @esteticaslimpty
       </div>
 
@@ -1246,7 +1159,7 @@
           </div>
 
           <div class="field">
-            <label for="service">Servicio de interés (lista completa)</label>
+            <label for="service">Servicio de interés</label>
             <select id="service" name="service" required>
               <option value="" disabled selected>Selecciona un servicio</option>
 
@@ -1281,7 +1194,6 @@
                 <option>Botox</option>
                 <option>Ácido hialurónico</option>
                 <option>Bioestimuladores</option>
-                <option>PRP</option>
                 <option>Skinbooster</option>
                 <option>Endolifting</option>
                 <option>Armonización facial</option>
@@ -1293,7 +1205,6 @@
                 <option>HIFU</option>
                 <option>Tecarterapia</option>
                 <option>Radiofrecuencia fraccionada</option>
-                <option>Endolifting (aparatología)</option>
                 <option>Morpheus</option>
                 <option>Láser depilador diodo</option>
                 <option>Láser fraccionado CO2</option>
@@ -1329,7 +1240,7 @@
     <div class="foot">
       <div>
         <b>Estética Slim</b><br>
-        <span>Calle Reina del Pasífico, casa 36, Pacífico</span><br>
+        <span>Calle Reina del Pacífico, casa 36, Pacífico</span><br>
         <span>Majostorem@gmail.com</span>
       </div>
       <div class="footlinks">
@@ -1371,12 +1282,11 @@
 `Hola! Soy ____.
 Me interesa: ${serviceName}.
 Quiero info de precio/paquetes y disponibilidad.
-Dirección: Calle Reina del Pasífico, casa 36, Pacífico.
+Dirección: Calle Reina del Pacífico, casa 36, Pacífico.
 Instagram: ${IG_HANDLE}`;
     openWA(text);
   }
 
-  // Form -> WhatsApp
   document.getElementById("contactForm").addEventListener("submit", function(e){
     e.preventDefault();
     const name = (document.getElementById("name").value || "").trim();
@@ -1389,15 +1299,12 @@ Instagram: ${IG_HANDLE}`;
 `Hola! Soy ${name}${phone ? " ("+phone+")" : ""}.
 Quiero agendar en Estética Slim.
 Servicio: ${service}
-${when ? "Cuándo: "+when : ""}
-${message ? "Mensaje: "+message : ""}
-Dirección: Calle Reina del Pasífico, casa 36, Pacífico.`;
+${when ? "Cuándo: "+when : "" }
+${message ? "Mensaje: "+message : "" }
+Dirección: Calle Reina del Pacífico, casa 36, Pacífico.`;
 
     openWA(text);
   });
-
-  // Slider (1 solo slide, sin botones ni auto)
-  // Se deja intencionalmente sin lógica de múltiples slides.
 </script>
 
 </body>
